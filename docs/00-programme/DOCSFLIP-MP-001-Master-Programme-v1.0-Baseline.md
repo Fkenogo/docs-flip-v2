@@ -169,7 +169,7 @@ Key observations:
 
 | ID      | Title                    | Area           | Maturity      | Status           | Version | Parent Documents        | Repository Path               |
 | ------- | ------------------------ | -------------- | ------------- | ---------------- | ------- | ----------------------- | ----------------------------- |
-| MP-001  | Master Programme         | Programme      | L2 (Expanded) | Active           | 1.2     | —                       | `docs/00-programme/`          |
+| MP-001  | Master Programme         | Programme      | L2 (Expanded) | Active           | 1.3     | —                       | `docs/00-programme/`          |
 | CON-001 | Product Foundation       | Foundation     | L2 (Expanded) | Founder Approved | 0.2     | MP-001                  | `docs/01-product-foundation/` |
 | PA-001  | Product Architecture     | Foundation     | L1 (Skeleton) | Active Draft     | 0.1     | MP-001, CON-001         | `docs/01-product-foundation/` |
 | BIZ-001 | Business Model           | Foundation     | L1 (Skeleton) | Active Draft     | 0.1     | MP-001, PA-001          | `docs/01-product-foundation/` |
@@ -259,13 +259,13 @@ Unresolved architectural and product questions awaiting Founder direction.
 
 Architectural assumptions, dependencies and known risks affecting repository evolution.
 
-| Ref    | Type       | Description                                                                                         | Severity | Mitigation                                                         |
-| ------ | ---------- | --------------------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------ |
-| RA-001 | Assumption | Execution sequence is sufficient to govern dependency before expansion stages begin                 | Medium   | Validate at each WP closure                                        |
-| RA-002 | Assumption | All skeleton documents will remain stable during Foundation Expansion                               | Low      | Monitor via MP-001 reviews                                         |
-| RA-003 | Risk       | Legacy Concept Document may be cited as authoritative by mistake                                    | Low      | Clear markings applied; registered only in Legacy section          |
-| RA-004 | Risk       | Candidate documents (PRC-001, PAY-001, PUB-001) may be prematurely referenced in approved documents | Low      | Removed from COM-001 relationships; governed by Candidate Register |
-| RA-005 | Assumption | The current repository directory structure (00–05) is sufficient through to engineering preparation | Low      | Review at each phase transition                                    |
+| Ref    | Type       | Description                                                                                         | Severity | Mitigation                                                                                      |
+| ------ | ---------- | --------------------------------------------------------------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------- |
+| RA-001 | Assumption | Execution sequence is sufficient to govern dependency before expansion stages begin                 | Medium   | Validate at each WP closure                                                                     |
+| RA-002 | Assumption | All skeleton documents will remain stable during Foundation Expansion                               | Low      | Monitor via MP-001 reviews                                                                      |
+| RA-003 | Risk       | Legacy Concept Document may be cited as authoritative by mistake                                    | Low      | Clear markings applied; registered only in Legacy section                                       |
+| RA-004 | Risk       | Candidate documents may be prematurely referenced in approved documents                             | Low      | All candidate documents governed by Candidate Register; removed from active document references |
+| RA-005 | Assumption | The current repository directory structure (00–05) is sufficient through to engineering preparation | Low      | Review at each phase transition                                                                 |
 
 ---
 
