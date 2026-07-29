@@ -3,7 +3,7 @@
 **Document ID:** DOCSFLIP-CON-001  
 **Title:** Product Foundation  
 **Version:** 0.2 (WP-01 Expansion)  
-**Status:** Active Draft  
+**Status:** Founder Approved  
 **Maturity:** L2 — Expanded  
 **Repository Path:** `docs/01-product-foundation/`  
 **Authority:** Founder  

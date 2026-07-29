@@ -6,6 +6,8 @@
 
 ---
 
+> **Historical Notice:** This report records the pre-Founder-review state of WP-01. Final Founder disposition and closure are recorded in WP-01-Closure-Report.md and MP-001.
+
 ## 1. Scope Compliance
 
 | Requirement                    | Status                                                                    |

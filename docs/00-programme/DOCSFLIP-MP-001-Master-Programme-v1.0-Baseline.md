@@ -2,7 +2,7 @@
 
 **Document ID:** DOCSFLIP-MP-001  
 **Title:** Master Programme  
-**Version:** 1.2 (WP-01 Closure)  
+**Version:** 1.3 (WP-01 Administrative Closure)  
 **Status:** Active  
 **Repository Path:** `docs/00-programme/`  
 **Authority:** Founder  
@@ -342,7 +342,7 @@ Monitor:
 - Terminology consistency
 - Outdated content
 
-**Current Health Assessment (Baseline Closure):**
+**Current Health Assessment (WP-01 Closure):**
 
 | Metric                  | Status                                                  |
 | ----------------------- | ------------------------------------------------------- |
@@ -376,7 +376,7 @@ Monitor:
 4. Every completed work package must update MP-001.
 5. Every conversation that changes the repository ends with an MP-001 update.
 6. Legacy documents must never override approved repository documents.
-7. Candidate documents (PRC-001, PAY-001, PUB-001) are governed by the Candidate Register until Founder approval.
+7. All candidate documents are governed by the Candidate Register until Founder approval. Candidate identifiers must not be treated as permanent repository documents, added to the active dependency model, or created as files before approval.
 
 ---
 
@@ -394,4 +394,4 @@ Phase 1 (Programme Design) is complete when:
 
 **Phase 1 Status: COMPLETE — Baseline Closure achieved 2026-07-29.**
 
-Phase 2 (Foundation Expansion) is entered when MP-001 records a READY recommendation and WP-01 is activated.
+Phase 2 is active. WP-01 is closed and WP-02 is the next planned work package.
