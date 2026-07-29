@@ -1,10 +1,21 @@
-# Docsflip Concept Document
+# DOCSFLIP-CONCEPT-001 — Legacy Product Concept (Source Reference)
 
-**Document ID:** DOCSFLIP-CONCEPT-001  
-**Version:** 0.1  
-**Status:** Draft — Strategic Concept Baseline  
-**Date:** 2026-07-29  
-**Project:** Docsflip  
+> **⚠️ LEGACY — NON-AUTHORITATIVE — SOURCE MATERIAL ONLY**
+>
+> This document is a **Legacy Product Concept**. It does **not** carry programme authority.
+> It is preserved as a **source reference** for future work packages that may extract
+> material from it. It must **never** override approved repository documents.
+>
+> **Legacy Status:** Retained for historical reference only.
+> **Repository Authority:** None. Do not cite as authoritative.
+> **Registered In:** DOCSFLIP-MP-001 — Legacy Document Register.
+>
+> **Date of Legacy Classification:** 2026-07-29
+> **Original Document ID:** DOCSFLIP-CONCEPT-001
+> **Original Version:** 0.1
+> **Original Status:** Draft — Strategic Concept Baseline
+> **Original Date:** 2026-07-29
+> **Project:** Docsflip
 
 ---
 

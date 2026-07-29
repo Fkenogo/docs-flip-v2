@@ -6,7 +6,7 @@
 **Status:** Active Draft  
 **Repository Path:** `docs/03-product/`  
 **Authority:** Founder  
-**Parent Documents:** DOCSFLIP-MP-001, DOCSFLIP-CON-001
+**Parent Documents:** DOCSFLIP-MP-001, DOCSFLIP-PA-001
 
 ---
 
@@ -25,18 +25,23 @@ Docsflip is designed around the needs of people and organisations that create, p
 # 3. Primary User Groups
 
 ## 3.1 Independent Publisher
+
 Creates and publishes their own content with minimal administration.
 
 ## 3.2 Organisation Publisher
+
 Publishes on behalf of a company, NGO, institution or government body.
 
 ## 3.3 Organisation Administrator
+
 Manages organisation settings, users and commercial controls.
 
 ## 3.4 Content Contributor
+
 Prepares or uploads publication content but may not publish.
 
 ## 3.5 Publication Reader
+
 Views and interacts with published digital publications.
 
 ---
@@ -77,13 +82,13 @@ Typical goals include:
 
 # 7. Needs by User Type
 
-| User | Primary Need |
-|------|--------------|
-| Independent Publisher | Fast publishing |
-| Organisation Publisher | Team publishing |
-| Administrator | Governance & management |
-| Reader | Easy access |
-| Contributor | Content preparation |
+| User                   | Primary Need            |
+| ---------------------- | ----------------------- |
+| Independent Publisher  | Fast publishing         |
+| Organisation Publisher | Team publishing         |
+| Administrator          | Governance & management |
+| Reader                 | Easy access             |
+| Contributor            | Content preparation     |
 
 ---
 

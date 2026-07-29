@@ -20,20 +20,39 @@ It provides the common vocabulary used by business, commercial, product and engi
 
 # 2. Position in the Documentation Hierarchy
 
+**Execution Sequence**
+
+The repository is developed in the following order:
+
 ```text
-MP-001
-   ↓
+MP-001 → CON-001 → PA-001 → BIZ-001 → COM-001 → USR-001 → JNY-001 → FEA-001 → REQ-001 → DAT-001 → ARC-001 → IMP-001
+```
+
+**Architectural Dependency Model**
+
+Repository influence is defined as:
+
+```text
 CON-001
-   ↓
+    │
+    ▼
 PA-001
-   ├── BIZ-001
-   ├── COM-001
-   ├── USR-001
-   ├── JNY-001
-   ├── FEA-001
-   ├── REQ-001
-   ├── DAT-001
-   └── ARC-001
+ ├──────────────┬──────────────┐
+ ▼              ▼              ▼
+BIZ-001     COM-001      USR-001
+                               │
+                               ▼
+                           JNY-001
+                               ▼
+                           FEA-001
+                               ▼
+                           REQ-001
+                               ▼
+                           DAT-001
+                               ▼
+                           ARC-001
+                               ▼
+                           IMP-001
 ```
 
 ---
@@ -50,49 +69,59 @@ PA-001
 # 4. Core Product Domains
 
 ## Identity
+
 Accounts, authentication, profiles and access.
 
 ## Organisation
+
 Organisation workspaces, teams, governance and administration.
 
 ## Publishing
+
 Document upload, conversion, preview and publication.
 
 ## Commercial
+
 Credits, wallets, pricing, payments and commercial policies.
 
 ## Publication Management
+
 Hosting, lifecycle, renewal, archival and retirement.
 
 ## Distribution
+
 Sharing, embeds, QR codes and access channels.
 
 ## Analytics
+
 Usage, readership, engagement and reporting.
 
 ## Administration
+
 Operational controls, support and platform administration.
 
 ## Platform Services
+
 Notifications, configuration, audit and cross-cutting services.
 
 ## Integrations
+
 Payment providers, storage, APIs and third-party services.
 
 ---
 
 # 5. Domain Relationships
 
-| Domain | Primary Relationships |
-|--------|------------------------|
-| Identity | Organisation, Publishing |
-| Organisation | Commercial, Administration |
-| Publishing | Commercial, Distribution |
-| Commercial | Publishing, Publication Management |
-| Publication Management | Analytics, Distribution |
-| Distribution | Analytics |
-| Administration | All domains |
-| Integrations | All domains |
+| Domain                 | Primary Relationships              |
+| ---------------------- | ---------------------------------- |
+| Identity               | Organisation, Publishing           |
+| Organisation           | Commercial, Administration         |
+| Publishing             | Commercial, Distribution           |
+| Commercial             | Publishing, Publication Management |
+| Publication Management | Analytics, Distribution            |
+| Distribution           | Analytics                          |
+| Administration         | All domains                        |
+| Integrations           | All domains                        |
 
 ---
 

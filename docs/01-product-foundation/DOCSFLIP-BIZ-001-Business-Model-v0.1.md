@@ -6,7 +6,7 @@
 **Status:** Active Draft  
 **Repository Path:** `docs/01-product-foundation/`  
 **Authority:** Founder  
-**Parent Documents:** DOCSFLIP-MP-001, DOCSFLIP-CON-001
+**Parent Documents:** DOCSFLIP-MP-001, DOCSFLIP-PA-001
 
 ---
 

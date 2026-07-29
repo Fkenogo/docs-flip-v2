@@ -6,7 +6,7 @@
 **Status:** Active Draft  
 **Repository Path:** `docs/02-commercial/`  
 **Authority:** Founder  
-**Parent Documents:** DOCSFLIP-MP-001, DOCSFLIP-CON-001, DOCSFLIP-BIZ-001
+**Parent Documents:** DOCSFLIP-MP-001, DOCSFLIP-PA-001, DOCSFLIP-BIZ-001
 
 ---
 
@@ -156,9 +156,6 @@ The commercial architecture should always be:
 - CON-001 defines the product.
 - BIZ-001 defines the business model.
 - COM-001 defines commercial operation.
-- PRC-001 will define pricing.
-- PAY-001 will define payment strategy.
-- PUB-001 will define publication output rules.
 
 ---
 
