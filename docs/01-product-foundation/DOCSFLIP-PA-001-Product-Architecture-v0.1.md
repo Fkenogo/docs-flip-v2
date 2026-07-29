@@ -2,7 +2,7 @@
 
 **Document ID:** DOCSFLIP-PA-001  
 **Title:** Product Architecture  
-**Version:** 0.3 (Loop 2 — Domain Content Expansion)  
+**Version:** 0.4 (Loop 3 — Relationships and Traceability)  
 **Status:** Active Draft  
 **Maturity:** L2 — Expanded  
 **Repository Path:** `docs/01-product-foundation/`  
@@ -136,7 +136,6 @@ Per CAP-002: Registration, Authentication, Profile Management, Account Lifecycle
 
 ### Dependencies
 
-- Upstream: CON-001 (product identity), CAP-001 (capability definition).
 - No domain-level upstream dependencies — Identity is self-standing.
 
 ### Downstream Consumers
@@ -633,7 +632,228 @@ Per CAP-002: Publication Metrics, Reader Behaviour, Publisher Insights, Commerci
 
 ---
 
-# 6. Deferred Concerns
+# 6. Relationship Model
+
+## 6.1 Lifecycle Relationship Model
+
+The six domains participate across the product lifecycle as follows:
+
+```text
+Registration & Authentication
+        │
+        ▼
+   Identity ──────────────────────────────────────────────
+        │                                                │
+        ▼                                                │
+   Organisations                                         │
+        │                                                │
+        ▼                                                │
+   Publications ──► Commercial ──► Publications (publish) │
+        │              │                                  │
+        │              ▼                                  │
+        │         Cost Approval                           │
+        │                                                │
+        ▼                                                │
+   Reader Experience                                      │
+        │                                                │
+        ▼                                                │
+   Analytics ◄── Publications Events                     │
+        ◄────── Reader Experience Events                  │
+        ◄────── Commercial Events                         │
+```
+
+**Lifecycle stages:**
+
+1. **Registration & Authentication** — Identity authenticates the user.
+2. **Organisational Context** — Organisations establishes workspace and membership.
+3. **Publication Creation** — Publications (Creation) uploads, validates, converts, previews.
+4. **Commercial Approval** — Commercial presents costs; user approves credit consumption.
+5. **Publishing** — Publications (Creation) executes the publish action.
+6. **Publication Management** — Publications (Management) hosts, tracks lifecycle, manages metadata.
+7. **Distribution** — Publications (Distribution) generates links, embeds, QR codes.
+8. **Reading** — Reader Experience renders the publication for consumption.
+9. **Measurement** — Analytics ingests events from Publications, Reader Experience, and Commercial.
+
+## 6.2 Architectural Dependency Model
+
+```text
+                    Identity
+                 (no domain deps)
+                        │
+          ┌─────────────┼─────────────┐
+          ▼             ▼             ▼
+    Organisations   Commercial    Publications
+    (dep: Identity) (dep: Pub,    (dep: Identity,
+                    Identity,     Organisations)
+                    Orgs)              │
+                                 ┌─────┴─────┐
+                                 ▼           ▼
+                          Reader Exp.    Analytics
+                          (dep: Pub)     (dep: Pub,
+                                         Reader, Comm)
+```
+
+### Dependency Rules
+
+| Rule   | Description                                                                                                                      |
+| ------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| DR-001 | A domain may depend on any number of upstream domains.                                                                           |
+| DR-002 | A domain must not depend on a downstream domain.                                                                                 |
+| DR-003 | An upstream domain may emit events consumed by a downstream domain but must not control downstream behaviour.                    |
+| DR-004 | Analytics is always a downstream consumer — it observes, never controls.                                                         |
+| DR-005 | Cross-domain information flows respect bounded-context boundaries — shared assets have a single authoritative owner per CAP-003. |
+
+### Dependency Constraints
+
+| Constraint | Description                                                                                                  |
+| ---------- | ------------------------------------------------------------------------------------------------------------ |
+| DC-001     | Identity must not depend on any other domain.                                                                |
+| DC-002     | Organisations must not depend on Publications or Commercial.                                                 |
+| DC-003     | Publications must not depend on Commercial for lifecycle decisions — only for cost approval at publish time. |
+| DC-004     | Reader Experience must not depend on Analytics.                                                              |
+| DC-005     | No domain may depend on ARC-001 — ARC-001 implements, it does not govern.                                    |
+
+## 6.3 Cross-Domain Interaction Model
+
+### Permitted Interactions
+
+| From              | To                | Interaction                                                |
+| ----------------- | ----------------- | ---------------------------------------------------------- |
+| Identity          | Organisations     | Authenticate user for workspace membership                 |
+| Identity          | Publications      | Identify publisher creating a publication                  |
+| Identity          | Commercial        | Identify payer purchasing credits                          |
+| Organisations     | Publications      | Provide organisational context for publishing              |
+| Organisations     | Commercial        | Provide organisational context for commercial transactions |
+| Publications      | Commercial        | Trigger cost preview on publish action                     |
+| Publications      | Reader Experience | Deliver publication content for reading                    |
+| Publications      | Analytics         | Emit publication lifecycle events                          |
+| Commercial        | Publications      | Confirm credit availability for publish (read-only)        |
+| Reader Experience | Analytics         | Emit reader behaviour events                               |
+| Commercial        | Analytics         | Emit commercial transaction events                         |
+
+### Prohibited Interactions
+
+| From              | To                | Prohibition                                                           |
+| ----------------- | ----------------- | --------------------------------------------------------------------- |
+| Analytics         | Publications      | Analytics observes; it must not control publications                  |
+| Analytics         | Commercial        | Analytics observes; it must not control commercial behaviour          |
+| Analytics         | Reader Experience | Analytics observes; it must not control reading                       |
+| Commercial        | Publications      | Commercial must not determine publishability — only cost              |
+| Reader Experience | Publications      | Reader Experience consumes; it must not modify publications           |
+| Any domain        | ARC-001           | ARC-001 implements; no business domain governs technical architecture |
+
+### Ownership Boundaries
+
+Per CAP-003: "Business responsibilities may cross capability boundaries through collaboration, but ownership of a business asset shall belong to one capability only."
+
+| Asset           | Owned By          | Used By                                  |
+| --------------- | ----------------- | ---------------------------------------- |
+| User            | Identity          | Organisations, Publications, Commercial  |
+| Organisation    | Organisations     | Publications, Commercial                 |
+| Publication     | Publications      | Commercial, Reader Experience, Analytics |
+| Wallet          | Commercial        | (no external consumers)                  |
+| Reader Session  | Reader Experience | Analytics                                |
+| Analytics Event | Analytics         | (no external consumers)                  |
+
+---
+
+# 7. Relationship Principles
+
+1. **Domains collaborate; they do not control.** A domain may request information or action from another domain. It must not dictate how that domain fulfils the request.
+
+2. **Bounded contexts are inviolable.** No domain may reach inside another domain's bounded context. Interactions occur at boundary interfaces — events, queries, or well-defined contracts.
+
+3. **Ownership implies stewardship.** The domain that owns a business asset is responsible for its integrity, lifecycle, and governance. Other domains may reference but not modify.
+
+4. **Analytics observes; it never commands.** Analytics receives events from Publications, Reader Experience, and Commercial. It must never feed decisions back into those domains.
+
+5. **Upstream domains emit; downstream domains consume.** Information flows from source to consumer. A downstream domain must not push requirements upstream — the upstream domain defines what events it emits.
+
+6. **Commercial governs value; Publications governs content.** The boundary between what is published (Publications) and what it costs (Commercial) is architectural, not incidental. Cross-domain coupling at this boundary is the highest-risk interaction and requires the strictest governance.
+
+---
+
+# 8. Relationship Constraints
+
+1. **No circular dependencies.** The dependency graph must remain acyclic. If a dependency loop emerges, the architecture must be refactored.
+
+2. **No shared mutable state across bounded contexts.** A business asset is owned by one domain. Other domains may hold references or cached copies, but the authoritative state resides with the owner.
+
+3. **Commercial approval is a gate, not a controller.** Commercial may approve or decline a publish action based on credit availability. It must not determine whether a publication is ready to publish — that is Publications' responsibility.
+
+4. **Reader Experience is isolated from commercial logic.** The reader must never encounter a paywall, credit prompt, or commercial interruption during reading. Commercial boundaries are publisher-facing, not reader-facing.
+
+5. **Event schemas are defined by the emitting domain.** Analytics must adapt to the events it receives. It must not impose schema requirements on Publications, Reader Experience, or Commercial.
+
+---
+
+# 9. Traceability Model
+
+## 9.1 Constitutional Traceability
+
+```text
+CON-001 (Product Foundation)
+    │
+    ├── PH-001 → Publications (Publishing Outcomes Define Value)
+    ├── PH-002 → Commercial (Transparency Is a Product Feature)
+    ├── PH-003 → Commercial (Access Should Not Require Unnecessary Commitment)
+    ├── PH-004 → Identity (The User Controls Their Publishing)
+    ├── PH-005 → Publications (Simplicity Outperforms Feature Accumulation)
+    ├── PH-006 → Reader Experience (Africa Is a Design Assumption)
+    ├── PH-007 → Organisations (Organisations Are First-Class Users)
+    │
+    ├── PP-001 → Publications (Publication-First)
+    ├── PP-002 → Commercial (Pay for Value Delivered)
+    ├── PP-003 → Commercial (Transparency by Design)
+    ├── PP-004 → Identity (User Control)
+    ├── PP-005 → Publications (Flexible Publishing)
+    ├── PP-006 → Reader Experience (Accessibility)
+    ├── PP-007 → Organisations (Organisation-Ready)
+    ├── PP-008 → Publications (Scalable by Design)
+    ├── PP-009 → Commercial, Organisations (Market-Aware)
+    ├── PP-010 → All domains (Engineering Independence)
+    │
+    ▼
+CAP-001 (Canonical Capability Model)
+    │
+    ├── Identity → PA-001 §4.1
+    ├── Organisations → PA-001 §4.2
+    ├── Publications → PA-001 §4.3
+    ├── Commercial → PA-001 §4.4
+    ├── Reader Experience → PA-001 §5.1
+    ├── Analytics → PA-001 §5.2
+    │
+    ▼
+PA-001 (Product Architecture)
+    │
+    ├── BIZ-001 → Value by domain
+    ├── COM-001 → Commercial domain
+    ├── USR-001 → User responsibilities by domain
+    ├── JNY-001 → Journeys across domains
+    ├── FEA-001 → Features grouped by domain
+    ├── REQ-001 → Requirements grouped by domain
+    ├── DAT-001 → Business entities by domain
+    ├── ARC-001 → Technical components implementing domains
+    └── IMP-001 → Implementation programme
+```
+
+## 9.2 Complete Downstream Traceability
+
+| Downstream Document | PA-001 Domains Referenced                  | Traceability Rule                                                                                                                                      |
+| ------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| BIZ-001             | Organisations, Commercial                  | BIZ-001 maps business value to architecture domains. Every value stream must reference at least one PA-001 domain.                                     |
+| COM-001             | Commercial                                 | COM-001 defines commercial rules operating within the Commercial domain.                                                                               |
+| USR-001             | Identity, Organisations, Reader Experience | USR-001 defines personas for each user-facing domain. Every user category must reference its primary PA-001 domain.                                    |
+| JNY-001             | All 6 domains                              | JNY-001 defines journeys that cross domains. Every journey must list the domains it traverses.                                                         |
+| FEA-001             | All 6 domains                              | FEA-001 groups features by PA-001 domain. Every feature must belong to exactly one domain.                                                             |
+| REQ-001             | All 6 domains                              | REQ-001 derives requirements from features. Every requirement must trace to a PA-001 domain via its parent feature.                                    |
+| DAT-001             | All 6 domains                              | DAT-001 models business entities per PA-001 bounded context. Every entity must have a single authoritative domain owner.                               |
+| ARC-001             | All 6 domains + deferred concerns          | ARC-001 implements each domain's capabilities technically. Deferred concerns (Notifications, APIs, Infrastructure, etc.) are ARC-001's responsibility. |
+| IMP-001             | All domains                                | IMP-001 governs engineering delivery of the architecture.                                                                                              |
+
+---
+
+# 10. Deferred Concerns
 
 The following are not PA-001 business domains. Per CAP-001 §5, they belong in ARC-001 (Solution Architecture):
 
@@ -652,13 +872,7 @@ No technical design is provided for these concerns in this document.
 
 ---
 
-# 7. Domain Relationships
-
-Relationship model, lifecycle flow, dependency diagrams, and complete downstream traceability will be defined in WP-02R Loop 3 (Relationships and Traceability).
-
----
-
-# 8. Traceability
+# 11. Traceability
 
 Every major artefact should reference one or more architecture domains:
 
@@ -670,10 +884,11 @@ Every major artefact should reference one or more architecture domains:
 - REQ-001 → Requirements grouped by domain
 - DAT-001 → Business entities by domain
 - ARC-001 → Technical components implementing domains
+- IMP-001 → Implementation programme
 
 ---
 
-# 9. Foundational Decisions
+# 12. Foundational Decisions
 
 1. **CAP-001 defines the canonical capability model.** PA-001 elaborates that model into architecture domains without inventing new Level 1 capabilities.
 
@@ -687,15 +902,25 @@ Every major artefact should reference one or more architecture domains:
 
 6. **Downstream documents should align their structure to these domains.** Changes to core domains require Founder approval and CAP-005 governance.
 
+7. **Bounded contexts are inviolable.** No domain may reach inside another domain's bounded context (CAP-003).
+
+8. **The dependency graph must remain acyclic.** Circular dependencies require architectural refactoring.
+
 ---
 
-# 10. Refactoring State
+# 13. Refactoring State
 
 **Loop 1 — Structural Refactoring: COMPLETE.**
 **Loop 2 — Domain Content Expansion: COMPLETE.**
+**Loop 3 — Relationships and Traceability: COMPLETE.**
 
-All 6 domains have defined purpose, architectural intent, capability owner, business assets, bounded context, primary responsibilities, key sub-capabilities, domain principles, domain constraints, explicit exclusions, dependencies, and downstream consumers.
+PA-001 v0.4 is a complete Product Architecture document with:
 
-**Pending work:**
+- 6 CAP-aligned domains with full definitions
+- Lifecycle relationship model
+- Architectural dependency model with rules and constraints
+- Cross-domain interaction model (permitted and prohibited)
+- Relationship principles and constraints
+- Complete constitutional and downstream traceability
 
-- **Loop 3 — Relationships and Traceability:** Lifecycle flow, dependency model, and complete downstream traceability. Requires Founder authorisation.
+**WP-02R is ready for formal closure upon Founder approval.**
