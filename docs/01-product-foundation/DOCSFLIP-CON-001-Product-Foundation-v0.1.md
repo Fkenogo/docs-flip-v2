@@ -334,6 +334,10 @@ CON-001 is the root product knowledge document. It establishes what Docsflip is 
                    Product Foundation
                          │
                          ▼
+                   Capability Framework
+                    (CAP-000 → CAP-005)
+                         │
+                         ▼
                       PA-001
                 Product Architecture
        ┌───────────────┬───────────────┐
@@ -369,9 +373,13 @@ CON-001 is the root product knowledge document. It establishes what Docsflip is 
 
 ## 10.2 Document Relationships
 
+### Capability Framework — CAP-000 through CAP-005
+
+The Capability Framework defines the canonical business capabilities of Docsflip — 6 Level 1 capabilities: Identity, Organisations, Publications, Reader Experience, Commercial, Analytics. It provides the stable conceptual bridge between Product Foundation and Product Architecture.
+
 ### PA-001 — Product Architecture
 
-CON-001 defines what Docsflip is. PA-001 defines the enduring business domains (Identity, Publishing, Commercial, Organisation, etc.) that structure Docsflip. PA-001 translates product identity into an architectural vocabulary that all downstream documents adopt.
+CON-001 defines what Docsflip is. PA-001 elaborates the canonical capability model into architecture domains without inventing new capabilities. PA-001 translates product identity and the capability model into an architectural vocabulary that all downstream documents adopt.
 
 ### BIZ-001 — Business Model
 

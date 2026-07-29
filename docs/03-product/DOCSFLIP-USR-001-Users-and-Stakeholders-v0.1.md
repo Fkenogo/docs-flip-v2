@@ -95,6 +95,7 @@ Typical goals include:
 # 8. Relationships to Other Documents
 
 - CON-001 defines the product.
+- CAP-001 defines the Identity and Organisations capabilities that structure user responsibilities.
 - BIZ-001 defines the business model.
 - COM-001 defines commercial operation.
 - JNY-001 builds journeys from these users.

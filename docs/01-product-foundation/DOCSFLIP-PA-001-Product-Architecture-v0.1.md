@@ -6,15 +6,15 @@
 **Status:** Active Draft  
 **Repository Path:** `docs/01-product-foundation/`  
 **Authority:** Founder  
-**Parent Documents:** DOCSFLIP-MP-001, DOCSFLIP-CON-001
+**Parent Documents:** DOCSFLIP-MP-001, DOCSFLIP-CON-001, DOCSFLIP-CAP-001
 
 ---
 
 # 1. Purpose
 
-Product Architecture defines the conceptual structure of Docsflip. It identifies the enduring business domains, their responsibilities and relationships without describing technical implementation.
+Product Architecture elaborates the canonical capability model defined in the Capability Framework (CAP-001) into enduring business domains, their responsibilities and relationships without describing technical implementation.
 
-It provides the common vocabulary used by business, commercial, product and engineering documentation.
+It does not invent capabilities. It provides the common vocabulary used by business, commercial, product and engineering documentation, structuring the 6 Level 1 capabilities (Identity, Organisations, Publications, Reader Experience, Commercial, Analytics) into architecture domains.
 
 ---
 

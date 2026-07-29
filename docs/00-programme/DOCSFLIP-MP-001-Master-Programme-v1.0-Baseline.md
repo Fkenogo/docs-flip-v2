@@ -2,7 +2,7 @@
 
 **Document ID:** DOCSFLIP-MP-001  
 **Title:** Master Programme  
-**Version:** 1.3 (WP-01 Administrative Closure)  
+**Version:** 1.4 (Capability Framework Integration)  
 **Status:** Active  
 **Repository Path:** `docs/00-programme/`  
 **Authority:** Founder  
@@ -40,6 +40,7 @@ Create a product knowledge repository that enables anyone joining the project to
 docs/
 ├── 00-programme/
 ├── 01-product-foundation/
+│   └── capability-framework/
 ├── 02-commercial/
 ├── 03-product/
 ├── 04-technical/
@@ -103,6 +104,10 @@ MP-001
 ↓
 CON-001
 ↓
+CAP-000
+↓
+{ CAP-001, CAP-002, CAP-003, CAP-004, CAP-005 }
+↓
 PA-001
 ↓
 BIZ-001
@@ -124,7 +129,7 @@ ARC-001
 IMP-001
 ```
 
-The execution sequence governs the order in which work packages are planned. A document's upstream dependencies should be substantially complete before the document enters expansion.
+The execution sequence governs the order in which work packages are planned. A document's upstream dependencies should be substantially complete before the document enters expansion. The Capability Framework (CAP-000 through CAP-005) must be established before PA-001 can elaborate capabilities.
 
 ## 7.2 Architectural Dependency Model
 
@@ -134,7 +139,10 @@ Repository influence flows through a directed model in which each document inher
 CON-001
     │
     ▼
-PA-001
+CAP-001 (Canonical Capability Model)
+    │
+    ▼
+PA-001 (elaborates, does not invent)
  ├──────────────┬──────────────┐
  ▼              ▼              ▼
 BIZ-001     COM-001      USR-001
@@ -156,7 +164,8 @@ BIZ-001     COM-001      USR-001
 Key observations:
 
 - CON-001 is the root product knowledge document (below MP-001).
-- PA-001 translates product intent into architecture domains.
+- CAP-001 defines the canonical capability model — 6 Level 1 business capabilities.
+- PA-001 elaborates capabilities into architecture domains without inventing new ones.
 - BIZ-001, COM-001 and USR-001 are peer branches under PA-001.
 - JNY-001 derives from USR-001.
 - The product chain (USR-001 → JNY-001 → FEA-001 → REQ-001) preserves direct traceability.
@@ -167,20 +176,26 @@ Key observations:
 
 # 8. Repository Document Register
 
-| ID      | Title                    | Area           | Maturity      | Status           | Version | Parent Documents        | Repository Path               |
-| ------- | ------------------------ | -------------- | ------------- | ---------------- | ------- | ----------------------- | ----------------------------- |
-| MP-001  | Master Programme         | Programme      | L2 (Expanded) | Active           | 1.3     | —                       | `docs/00-programme/`          |
-| CON-001 | Product Foundation       | Foundation     | L2 (Expanded) | Founder Approved | 0.2     | MP-001                  | `docs/01-product-foundation/` |
-| PA-001  | Product Architecture     | Foundation     | L1 (Skeleton) | Active Draft     | 0.1     | MP-001, CON-001         | `docs/01-product-foundation/` |
-| BIZ-001 | Business Model           | Foundation     | L1 (Skeleton) | Active Draft     | 0.1     | MP-001, PA-001          | `docs/01-product-foundation/` |
-| COM-001 | Commercial Architecture  | Commercial     | L1 (Skeleton) | Active Draft     | 0.1     | MP-001, PA-001, BIZ-001 | `docs/02-commercial/`         |
-| USR-001 | Users & Stakeholders     | Product        | L1 (Skeleton) | Active Draft     | 0.1     | MP-001, PA-001          | `docs/03-product/`            |
-| JNY-001 | User Journeys            | Product        | L1 (Skeleton) | Active Draft     | 0.1     | USR-001                 | `docs/03-product/`            |
-| FEA-001 | Product Features         | Product        | L1 (Skeleton) | Active Draft     | 0.1     | JNY-001                 | `docs/03-product/`            |
-| REQ-001 | Product Requirements     | Product        | L1 (Skeleton) | Active Draft     | 0.1     | FEA-001                 | `docs/03-product/`            |
-| DAT-001 | Data Architecture        | Technical      | L0 (Planned)  | Planned          | —       | REQ-001                 | `docs/04-technical/`          |
-| ARC-001 | Solution Architecture    | Technical      | L0 (Planned)  | Planned          | —       | DAT-001                 | `docs/04-technical/`          |
-| IMP-001 | Implementation Programme | Implementation | L0 (Planned)  | Planned          | —       | ARC-001                 | `docs/05-implementation/`     |
+| ID      | Title                                      | Area           | Maturity      | Status           | Version | Parent Documents         | Repository Path                                    |
+| ------- | ------------------------------------------ | -------------- | ------------- | ---------------- | ------- | ------------------------ | -------------------------------------------------- |
+| MP-001  | Master Programme                           | Programme      | L2 (Expanded) | Active           | 1.4     | —                        | `docs/00-programme/`                               |
+| CON-001 | Product Foundation                         | Foundation     | L2 (Expanded) | Founder Approved | 0.2     | MP-001                   | `docs/01-product-foundation/`                      |
+| CAP-000 | Capability Framework                       | Foundation     | L1 (Skeleton) | Active           | 0.1     | MP-001, CON-001          | `docs/01-product-foundation/capability-framework/` |
+| CAP-001 | Canonical Capability Model                 | Foundation     | L1 (Skeleton) | Active           | 0.1     | CAP-000                  | `docs/01-product-foundation/capability-framework/` |
+| CAP-002 | Capability Maps                            | Foundation     | L1 (Skeleton) | Active           | 0.1     | CAP-001                  | `docs/01-product-foundation/capability-framework/` |
+| CAP-003 | Capability Interactions & Bounded Contexts | Foundation     | L1 (Skeleton) | Active           | 0.1     | CAP-001                  | `docs/01-product-foundation/capability-framework/` |
+| CAP-004 | Business Asset Model                       | Foundation     | L1 (Skeleton) | Active           | 0.1     | CAP-001                  | `docs/01-product-foundation/capability-framework/` |
+| CAP-005 | Capability Governance Standard             | Foundation     | L1 (Skeleton) | Active           | 0.1     | CAP-000                  | `docs/01-product-foundation/capability-framework/` |
+| PA-001  | Product Architecture                       | Foundation     | L1 (Skeleton) | Active Draft     | 0.1     | MP-001, CON-001, CAP-001 | `docs/01-product-foundation/`                      |
+| BIZ-001 | Business Model                             | Foundation     | L1 (Skeleton) | Active Draft     | 0.1     | MP-001, PA-001           | `docs/01-product-foundation/`                      |
+| COM-001 | Commercial Architecture                    | Commercial     | L1 (Skeleton) | Active Draft     | 0.1     | MP-001, PA-001, BIZ-001  | `docs/02-commercial/`                              |
+| USR-001 | Users & Stakeholders                       | Product        | L1 (Skeleton) | Active Draft     | 0.1     | MP-001, PA-001           | `docs/03-product/`                                 |
+| JNY-001 | User Journeys                              | Product        | L1 (Skeleton) | Active Draft     | 0.1     | USR-001                  | `docs/03-product/`                                 |
+| FEA-001 | Product Features                           | Product        | L1 (Skeleton) | Active Draft     | 0.1     | JNY-001                  | `docs/03-product/`                                 |
+| REQ-001 | Product Requirements                       | Product        | L1 (Skeleton) | Active Draft     | 0.1     | FEA-001                  | `docs/03-product/`                                 |
+| DAT-001 | Data Architecture                          | Technical      | L0 (Planned)  | Planned          | —       | REQ-001                  | `docs/04-technical/`                               |
+| ARC-001 | Solution Architecture                      | Technical      | L0 (Planned)  | Planned          | —       | DAT-001                  | `docs/04-technical/`                               |
+| IMP-001 | Implementation Programme                   | Implementation | L0 (Planned)  | Planned          | —       | ARC-001                  | `docs/05-implementation/`                          |
 
 ## 8.1 Legacy Document Register
 
@@ -222,6 +237,8 @@ All structural decisions affecting the repository, ordered by decision date.
 | FD-P1-003   | 2026-07-29 | PRC-001, PAY-001, PUB-001 entered into Candidate Register; not added to Repository Document Register                                                                                                                                              | Accepted |
 | FD-P1-004   | 2026-07-29 | Initialise operational registers (Candidate, Decision, Deferred, Open Questions, Risk & Assumption) with current programme knowledge                                                                                                              | Accepted |
 | FD-WP01-001 | 2026-07-29 | WP-01 Founder Disposition: Accept CON-001 v0.2 with Minor Conditions (3 conditions). Conditions applied: Product Non-goals added, Constitutional Stability statement added, EXP-001 registered as candidate. WP-01 closed. WP-02 authorised next. | Accepted |
+| FD-PF-001   | 2026-07-29 | Capability Framework (CAP-000 through CAP-005) approved in principle. Phase A analysis complete. Phase B integration authorised.                                                                                                                  | Accepted |
+| FD-PF-002   | 2026-07-29 | Capability Framework integrated into repository. CAP documents relocated to `capability-framework/`. MP-001 dependency chain, document register and architectural model updated. PA-001, CON-001, COM-001, USR-001 cross-references added.        | Accepted |
 
 ---
 
@@ -303,7 +320,7 @@ Repository Architecture & Skeleton
 
 ## Phase 2 — Foundation Expansion
 
-Expand core foundation and commercial documents (WP-01 through WP-08)
+Expand core foundation and commercial documents (WP-01 through WP-08). Capability Framework (CAP-000 through CAP-005) integrated.
 
 ## Phase 3 — Technical Definition
 
@@ -319,13 +336,14 @@ Develop IMP-001
 
 Track:
 
-- Planned documents: 12 permanent + 1 legacy
+- Planned documents: 18 permanent + 1 legacy
 - Active work packages: 0
 - Completed work packages: 1 (WP-01)
 - Foundation Expansion progress: 1 of 8 work packages complete
 - Current programme position: WP-01 Closed — WP-02 Next
 - CON-001 maturity: L2 — Expanded
 - CON-001 status: Founder Approved
+- Capability Framework: Integrated (CAP-000 through CAP-005)
 - Repository completion: Phase 2 in progress (1/8 WPs)
 - Candidate proposals: 4 (PRC-001, PAY-001, PUB-001, EXP-001)
 
@@ -342,16 +360,16 @@ Monitor:
 - Terminology consistency
 - Outdated content
 
-**Current Health Assessment (WP-01 Closure):**
+**Current Health Assessment (Capability Framework Integration):**
 
-| Metric                  | Status                                                  |
-| ----------------------- | ------------------------------------------------------- |
-| Broken dependencies     | None detected                                           |
-| Missing documents       | DAT-001, ARC-001, IMP-001 (Planned L0)                  |
-| Duplicate concepts      | Resolved — COM-001 collision eliminated                 |
-| Cross-reference quality | Aligned with Hybrid Dependency Model                    |
-| Terminology consistency | Corrected — DAT-001 now "Data Architecture" universally |
-| Outdated content        | None identified                                         |
+| Metric                  | Status                                               |
+| ----------------------- | ---------------------------------------------------- |
+| Broken dependencies     | None detected                                        |
+| Missing documents       | DAT-001, ARC-001, IMP-001 (Planned L0)               |
+| Duplicate concepts      | Resolved — COM-001 collision eliminated              |
+| Cross-reference quality | Aligned with Hybrid Dependency Model + CAP Framework |
+| Terminology consistency | Consistent across all documents                      |
+| Outdated content        | None identified                                      |
 
 ---
 
@@ -377,6 +395,7 @@ Monitor:
 5. Every conversation that changes the repository ends with an MP-001 update.
 6. Legacy documents must never override approved repository documents.
 7. All candidate documents are governed by the Candidate Register until Founder approval. Candidate identifiers must not be treated as permanent repository documents, added to the active dependency model, or created as files before approval.
+8. The Capability Framework (CAP-000 through CAP-005) defines the canonical business capabilities. No downstream document may redefine the capability model without Founder constitutional amendment.
 
 ---
 
@@ -394,4 +413,4 @@ Phase 1 (Programme Design) is complete when:
 
 **Phase 1 Status: COMPLETE — Baseline Closure achieved 2026-07-29.**
 
-Phase 2 is active. WP-01 is closed and WP-02 is the next planned work package.
+Phase 2 is active. WP-01 is closed. Capability Framework is integrated. WP-02 is the next planned work package.

@@ -154,6 +154,7 @@ The commercial architecture should always be:
 # 13. Relationships
 
 - CON-001 defines the product.
+- CAP-001 defines the Commercial capability (Wallet, Credits, Payments, Entitlements, Publication Outputs).
 - BIZ-001 defines the business model.
 - COM-001 defines commercial operation.
 
