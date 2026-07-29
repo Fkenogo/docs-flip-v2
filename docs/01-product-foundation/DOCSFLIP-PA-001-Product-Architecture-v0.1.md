@@ -2,19 +2,23 @@
 
 **Document ID:** DOCSFLIP-PA-001  
 **Title:** Product Architecture  
-**Version:** 0.1 (Draft)  
+**Version:** 0.2 (Loop 1 — Structural Refactoring)  
 **Status:** Active Draft  
+**Maturity:** L1 — Skeleton (Structural Alignment Complete)  
 **Repository Path:** `docs/01-product-foundation/`  
 **Authority:** Founder  
-**Parent Documents:** DOCSFLIP-MP-001, DOCSFLIP-CON-001, DOCSFLIP-CAP-001
+**Parent Documents:** DOCSFLIP-MP-001, DOCSFLIP-CON-001, DOCSFLIP-CAP-001  
+**Governing Framework:** CAP-000 through CAP-005 (Authoritative)
 
 ---
 
 # 1. Purpose
 
-Product Architecture elaborates the canonical capability model defined in the Capability Framework (CAP-001) into enduring business domains, their responsibilities and relationships without describing technical implementation.
+Product Architecture elaborates the canonical capability model defined by the Capability Framework (CAP-001) into enduring business domains, their responsibilities and relationships.
 
-It does not invent capabilities. It provides the common vocabulary used by business, commercial, product and engineering documentation, structuring the 6 Level 1 capabilities (Identity, Organisations, Publications, Reader Experience, Commercial, Analytics) into architecture domains.
+PA-001 does not invent capabilities. It translates the 6 Level 1 capabilities — Identity, Organisations, Publications, Reader Experience, Commercial, and Analytics — into an architecture vocabulary adopted by all downstream documents.
+
+PA-001 is technology-independent. Implementation concerns identified during domain analysis are deferred to ARC-001 (Solution Architecture).
 
 ---
 
@@ -25,18 +29,19 @@ It does not invent capabilities. It provides the common vocabulary used by busin
 The repository is developed in the following order:
 
 ```text
-MP-001 → CON-001 → PA-001 → BIZ-001 → COM-001 → USR-001 → JNY-001 → FEA-001 → REQ-001 → DAT-001 → ARC-001 → IMP-001
+MP-001 → CON-001 → CAP-000 → { CAP-001 through CAP-005 } → PA-001 → BIZ-001 → COM-001 → USR-001 → JNY-001 → FEA-001 → REQ-001 → DAT-001 → ARC-001 → IMP-001
 ```
 
 **Architectural Dependency Model**
-
-Repository influence is defined as:
 
 ```text
 CON-001
     │
     ▼
-PA-001
+CAP-001 (Canonical Capability Model)
+    │
+    ▼
+PA-001 (elaborates, does not invent)
  ├──────────────┬──────────────┐
  ▼              ▼              ▼
 BIZ-001     COM-001      USR-001
@@ -63,69 +68,76 @@ BIZ-001     COM-001      USR-001
 - The architecture is technology-independent.
 - Every downstream document adopts these domains.
 - New capabilities should extend existing domains where practical.
+- PA-001 may not introduce a new Level 1 capability without governance under CAP-005.
 
 ---
 
 # 4. Core Product Domains
 
-## Identity
+PA-001 defines the following product architecture domains. Each top-level domain corresponds to exactly one Level 1 capability defined in CAP-001.
 
-Accounts, authentication, profiles and access.
+## Core Domains
 
-## Organisation
+### Identity
 
-Organisation workspaces, teams, governance and administration.
+Individual accounts, authentication, profiles, credential lifecycle.
 
-## Publishing
+### Organisations
 
-Document upload, conversion, preview and publication.
+Organisation workspaces, teams, membership, workspace-level roles and permissions.
 
-## Commercial
+### Publications
 
-Credits, wallets, pricing, payments and commercial policies.
+The full lifecycle of digital publications, structured as three sub-domains:
 
-## Publication Management
+- **Creation** — upload, validation, conversion, preview, publish.
+- **Management** — hosting, metadata, ownership, availability, visibility, lifecycle, archival, restoration.
+- **Distribution** — share links, embeds, QR codes, access policies.
 
-Hosting, lifecycle, renewal, archival and retirement.
+The Publication is the primary business asset of Docsflip (CAP-004).
 
-## Distribution
+### Commercial
 
-Sharing, embeds, QR codes and access channels.
+Credits, wallets, payments, entitlements, and publication output monetisation.
 
-## Analytics
+## Supporting Domains
 
-Usage, readership, engagement and reporting.
+### Reader Experience
 
-## Administration
+Publication viewing, navigation, accessibility, search, and reader preferences.
 
-Operational controls, support and platform administration.
+### Analytics
 
-## Platform Services
-
-Notifications, configuration, audit and cross-cutting services.
-
-## Integrations
-
-Payment providers, storage, APIs and third-party services.
+Publication performance measurement, reader behaviour, publisher insights, and commercial reporting.
 
 ---
 
-# 5. Domain Relationships
+# 5. Deferred Concerns
 
-| Domain                 | Primary Relationships              |
-| ---------------------- | ---------------------------------- |
-| Identity               | Organisation, Publishing           |
-| Organisation           | Commercial, Administration         |
-| Publishing             | Commercial, Distribution           |
-| Commercial             | Publishing, Publication Management |
-| Publication Management | Analytics, Distribution            |
-| Distribution           | Analytics                          |
-| Administration         | All domains                        |
-| Integrations           | All domains                        |
+The following are not PA-001 business domains. Per CAP-001 §5, they belong in ARC-001 (Solution Architecture):
+
+- APIs
+- Integrations
+- Cloud Storage
+- Databases
+- Infrastructure
+- Notification Delivery Services
+- Audit Infrastructure
+- Platform Configuration
+- Search-Engine Implementation
+- Other Platform Services
+
+No technical design is provided for these concerns in this document.
 
 ---
 
-# 6. Traceability
+# 6. Domain Relationships
+
+Relationship model, lifecycle flow, and downstream traceability will be defined in WP-02R Loop 3 (Relationships and Traceability). The current relationship content from PA-001 v0.1 has been superseded by the structural refactoring.
+
+---
+
+# 7. Traceability
 
 Every major artefact should reference one or more architecture domains:
 
@@ -140,9 +152,31 @@ Every major artefact should reference one or more architecture domains:
 
 ---
 
-# 7. Foundational Decisions
+# 8. Foundational Decisions
 
-1. Product Architecture is the conceptual backbone of Docsflip.
-2. It is independent of technology choices.
-3. Downstream documents should align their structure to these domains.
-4. Changes to core domains require Founder approval because they affect the repository architecture.
+1. **CAP-001 defines the canonical capability model.** PA-001 elaborates that model into architecture domains without inventing new Level 1 capabilities.
+
+2. **PA-001 may not introduce a new Level 1 capability** without governance under CAP-005 and explicit Founder approval.
+
+3. **The Publication remains the primary business asset of Docsflip** (CAP-004).
+
+4. **Each top-level PA-001 domain corresponds to exactly one CAP-001 Level 1 capability.**
+
+5. **PA-001 is independent of technology choices.** Implementation concerns are deferred to ARC-001.
+
+6. **Downstream documents should align their structure to these domains.** Changes to core domains require Founder approval and CAP-005 governance.
+
+---
+
+# 9. Refactoring State
+
+**Loop 1 — Structural Refactoring: COMPLETE.**
+
+This document has been structurally refactored to align with the Capability Framework. The domain model has been reduced from 10 flat domains to 6 tiered domains matching CAP-001's Level 1 capabilities. Invented domains (Administration, Platform Services, Integrations) have been removed. Deferred concerns are assigned to ARC-001.
+
+**Pending work:**
+
+- **Loop 2 — Domain Content:** Detailed purpose, responsibilities, bounded contexts, asset ownership, and exclusions for each domain.
+- **Loop 3 — Relationships and Traceability:** Lifecycle flow, dependency model, and complete downstream traceability.
+
+Both loops require Founder authorisation before execution.
