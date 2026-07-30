@@ -2,9 +2,9 @@
 
 **Document ID:** DOCSFLIP-BIZ-001  
 **Title:** Business Model  
-**Version:** 0.2 (Loop 1 — Business Structure Alignment)  
+**Version:** 0.3 (Loop 2 — Business Content Expansion)  
 **Status:** Active Draft  
-**Maturity:** L1 — Skeleton (Structure Aligned)  
+**Maturity:** L2 — Expanded  
 **Repository Path:** `docs/01-product-foundation/`  
 **Authority:** Founder  
 **Parent Documents:** DOCSFLIP-MP-001, DOCSFLIP-PA-001
@@ -21,43 +21,97 @@ It intentionally stops short of describing commercial mechanics such as credits,
 
 # Part 1 — Value Model
 
-## 2. Business Model Summary
+## 2. Business Purpose
 
-Docsflip enables organisations and creators to transform PDF documents into interactive digital publications.
+Docsflip exists to make professional digital publishing accessible, transparent and affordable for African organisations of every size.
 
-The platform delivers value by making digital publishing simple, transparent and accessible while generating revenue through publishing activity rather than mandatory software subscriptions.
+The business purpose is derived directly from the Product Foundation (CON-001): to remove unnecessary barriers between creating knowledge and publishing it digitally. Docsflip serves organisations that produce valuable PDF content — reports, catalogues, magazines, manuals, research — and want to publish it professionally without committing to subscription obligations they do not need.
+
+The business operates on a fundamental belief: publishing outcomes define value. The platform generates revenue when customers publish, not when they maintain accounts. This aligns the business's commercial interests with customer value — Docsflip succeeds when its customers successfully publish.
 
 ---
 
 ## 3. Value Creation
 
-Docsflip creates value by:
+Docsflip creates value by enabling organisations to transform static PDF documents into interactive, shareable digital publications.
 
-- Reducing barriers to digital publishing.
-- Converting static PDFs into engaging publications.
-- Improving distribution and sharing.
-- Giving organisations predictable publishing choices.
-- Supporting African payment realities.
+**How value is created:**
+
+### Publishing Transformation
+
+The core value creation mechanism is the conversion of PDF documents into professional digital flipbook publications. A document that was previously a static file becomes an interactive, mobile-responsive, shareable publication. This transformation enables organisations to present their content in formats that engage readers and reflect professional quality.
+
+### Barrier Reduction
+
+Docsflip removes the barriers that prevent occasional publishers from accessing digital publishing. By eliminating mandatory subscriptions, the platform allows organisations to publish when they need to — whether once a year or every day. This creates value for segments that existing platforms exclude: NGOs publishing annual reports, government institutions distributing policy documents, independent publishers releasing occasional catalogues.
+
+### Organisational Enablement
+
+The platform enables organisations to manage publishing as a team activity. Workspaces, role-based permissions, approval workflows, and consolidated billing allow organisations to integrate publishing into their existing operational structures rather than treating it as an individual activity.
+
+### African Market Relevance
+
+By designing for African payment methods, procurement processes, and publishing patterns from the start, Docsflip creates value that international platforms cannot easily replicate. African organisations encounter a platform that understands their payment realities, their organisational structures, and their publishing needs.
+
+### Transparency as Value
+
+The platform's commitment to transparent pricing — showing costs before commitment, maintaining an immutable credit ledger, never silently consuming credits — creates trust value. Customers know what they will pay, what they will receive, and what remains.
 
 ---
 
 ## 4. Value Delivery
 
-Value is delivered through:
+Value is delivered to customers through multiple channels and mechanisms designed for accessibility, reliability, and organisational fit.
 
-- Self-service publishing.
-- Fast publication workflows.
-- Cloud-hosted publications.
-- Organisation support.
-- Secure sharing and access.
+### Self-Service Publishing Platform
+
+The primary delivery mechanism is the Docsflip web platform. Customers create accounts, upload PDFs, preview publications, approve costs, publish, and manage their publications through a self-service interface. The publishing flow is designed to be understood on first use — no training, documentation, or support intervention should be required for the core publishing transaction.
+
+### Cloud-Hosted Publications
+
+Published documents are hosted on Docsflip infrastructure with defined hosting durations, renewal mechanisms, and clear lifecycle states. Customers receive shareable links, embed codes, and QR codes for distribution. Hosting is managed — customers do not need to maintain infrastructure.
+
+### Organisation Workspaces
+
+For organisational customers, value is delivered through managed workspaces that support teams, roles, permissions, and collaborative publishing workflows. Organisation administrators can manage members, allocate publishing capacity, and monitor organisational publishing activity.
+
+### Offline and Self-Hosted Outputs
+
+Customers who require independence from Docsflip hosting can purchase self-hosted interactive publication packages. These deliver the complete publication — HTML, JavaScript, assets, viewer — for the customer to host independently.
+
+### Publication Analytics
+
+Customers receive publication performance data — views, readership, engagement metrics — enabling them to measure the impact of their published content.
+
+### Secure Sharing and Access
+
+Publications are distributed through permanent shareable links, website embeds, and QR codes with access control policies. Customers control who can view their publications and how they are distributed.
 
 ---
 
 ## 5. Value Capture
 
-Revenue is generated when customers publish and consume publishing services.
+Docsflip captures value through a pay-as-you-publish commercial model. Revenue is generated when customers publish and consume publishing services.
 
-The detailed commercial engine — including credits, publication outputs, pricing, bundles and payment rules — is defined separately in COM-001.
+### Revenue Model
+
+**Pay-Per-Publication (Primary)**
+The primary revenue mechanism is per-publication charging. Customers purchase Docsflip Credits in bundles and consume them when they create publication outputs. Revenue is recognised at the point of credit consumption — when a customer publishes a document, adds a publication enhancement, or renews hosting.
+
+**Credit Bundle Purchases**
+Customers pre-purchase publishing capacity through credit bundles. Bundle sizes are designed to serve different publishing frequencies: small bundles for occasional publishers, larger bundles for regular publishers, and allocated credit pools for organisational subscriptions. Purchased credits do not expire merely because time has passed.
+
+**Organisation Subscriptions**
+Larger organisations may subscribe to managed workspaces with monthly or annual credit allocations, consolidated billing, and organisational administration features. Subscriptions provide predictable revenue while maintaining the credit-based consumption model — organisations still see how credits are consumed by publication, team member, or department.
+
+**Enterprise and Institutional Arrangements**
+Large publishers, institutions, and public bodies may negotiate custom pricing, volume commitments, invoicing, and tailored service terms. These arrangements provide high-value, long-term revenue relationships.
+
+### Value Capture Principles
+
+- Revenue aligns with customer value — Docsflip earns when customers publish.
+- Commercial mechanics remain transparent — every cost is visible before commitment.
+- The detailed commercial engine — credits, publication outputs, pricing, bundles, and payment rules — is defined separately in COM-001.
 
 ---
 
@@ -65,94 +119,306 @@ The detailed commercial engine — including credits, publication outputs, prici
 
 ## 6. Customer Segments
 
-Primary segments include:
+Docsflip serves organisations and individuals who create PDF-based content and want to publish it digitally. Customer segments are defined by their publishing patterns, organisational context, and commercial preferences.
 
-- Businesses
-- Government
-- NGOs
-- Educational institutions
-- Publishers
-- Independent professionals
+### Primary Segments
+
+**Publishing Houses**
+Magazine publishers, newspaper digitisation, journal publishers, and recurring edition producers. Publishing houses represent the highest-volume segment. They require recurring publishing workflows, volume credit pricing, publication libraries, and long-term publication management. Organisation subscriptions with allocated credit pools are the natural commercial fit.
+
+**Corporate Organisations**
+Businesses producing annual reports, company profiles, product catalogues, sustainability reports, investor publications, internal magazines, and event programmes. Corporate publishing is typically periodic — quarterly, annual, or event-driven. Credit bundle purchases and organisation workspaces with approval workflows serve this segment.
+
+**NGOs and Development Organisations**
+Organisations publishing programme reports, evaluation reports, impact reports, policy briefs, research publications, newsletters, and training materials. This segment is characterised by project-based publishing cycles, donor reporting requirements, and sensitivity to cost. Pay-per-publication with low entry cost is essential. Organisation workspaces with team collaboration are valuable.
+
+**Government and Public Institutions**
+Ministries, agencies, and public bodies publishing strategic plans, statistical reports, policies, public consultation documents, and public information materials. This segment requires procurement-compatible payment (invoicing, purchase orders), formal approval workflows, and long-term publication hosting. Enterprise arrangements are appropriate.
+
+**Educational Institutions**
+Universities, research centres, and training organisations publishing research outputs, journals, course materials, and institutional publications. This segment values accessibility, long-term archival, and institutional branding.
+
+### Secondary Segments
+
+**Independent Publishers and Creators**
+Individual creators publishing magazines, digital books, portfolios, catalogues, and event publications. They need simple, fast publishing with minimal administration. Small credit bundles and pay-per-publication are the natural fit.
+
+**Agencies and Service Providers**
+Communications agencies, design firms, and marketing service providers who publish on behalf of clients. While Docsflip is not an agency-first platform, agencies represent a channel to market rather than a primary customer segment.
 
 ---
 
 ## 7. Customer Relationships
 
-Docsflip aims to build long-term relationships through:
+Docsflip builds and maintains customer relationships through transparency, reliability, and respect for customer autonomy.
 
-- Transparent pricing.
-- Simple onboarding.
-- Reliable publishing.
-- Clear communication.
-- Trust.
+### Relationship Principles
+
+**Transparency-Based Trust**
+The commercial relationship is founded on transparency. Costs are visible before commitment. Every credit consumption is recorded in an immutable ledger. Hosting status, renewal dates, and publication states are always visible. Customers are never surprised by charges, limitations, or platform behaviours.
+
+**Self-Service with Support**
+The platform is designed for self-service — customers should be able to publish without assistance. Support is available for exceptions, not as a requirement for normal operation. As the platform matures, support may tier from self-service documentation through community support to dedicated account management for enterprise customers.
+
+**Low-Commitment Engagement**
+Customers can publish a single document, pay for it, and leave. They can return months later and publish again. The platform does not penalise inactivity or require ongoing commitment. This builds relationships with occasional publishers who would be excluded by subscription-only models.
+
+**Organisational Relationship Management**
+For organisational customers, relationships are managed at the workspace level. Organisation administrators control membership, permissions, and commercial settings. The platform supports the organisation's internal governance rather than imposing its own.
+
+**Long-Term Publishing Partnership**
+For regular publishers, Docsflip aims to become a trusted publishing partner. Reliable hosting, predictable costs, publication lifecycle management, and performance analytics build long-term retention. The relationship deepens as customers publish more and integrate Docsflip into their publishing workflows.
 
 ---
 
 ## 8. Channels
 
-Customers discover and use Docsflip through:
+Customers discover, evaluate, and access Docsflip through multiple channels.
 
-- Direct web platform.
-- Partner organisations.
-- Digital marketing.
-- Referrals.
-- Strategic partnerships.
+### Direct Web Platform
+
+The primary channel is the Docsflip web application. Customers create accounts, purchase credits, publish documents, and manage publications directly through the platform. This is the lowest-cost, highest-margin channel.
+
+### Digital Marketing and Content
+
+Organic search, content marketing (publishing guides, case studies), and social media presence drive discovery. Docsflip's positioning as "Africa's pay-as-you-publish platform" provides a clear, searchable value proposition.
+
+### Partner Organisations
+
+Publishing associations, business networks, NGO coordination bodies, and government digital transformation programmes provide referral and distribution channels. Partnerships may include co-branded landing pages, referral arrangements, or integrated service offerings.
+
+### Strategic Partnerships
+
+Payment providers (mobile money platforms, card processors, invoicing services) serve as both infrastructure and discovery channels. Technology partners (PDF tooling, content management systems) may integrate Docsflip publishing into their workflows.
+
+### Direct Outreach
+
+For enterprise and institutional customers, direct relationship development — demonstrations, proposals, procurement engagement — is appropriate. This channel serves government ministries, large publishing houses, and institutional customers with formal procurement requirements.
+
+---
+
+## 9. Market Geography
+
+Docsflip is designed for Africa and launched from East Africa, with progressive continental expansion.
+
+### Primary Market: Africa
+
+Docsflip's product, commercial model, payment architecture, and market assumptions are built for African organisations. This is not a "launch in developed markets, expand to Africa later" strategy. Africa is the design centre.
+
+### Initial Launch: East Africa
+
+East Africa provides a concentrated launch market with established mobile money infrastructure (M-PESA and equivalents), growing digital publishing demand, and a mix of organisational types (NGOs, corporate, government, publishing houses). Launch countries will be selected based on payment infrastructure readiness, regulatory environment, and market demand.
+
+### Expansion Model
+
+Expansion is progressive and country-configurable. As Docsflip adds country support, the platform enables country-specific payment methods, currencies, tax configurations, and localisation without architectural redesign. This allows the business to expand at the pace of payment infrastructure and market readiness rather than being constrained by platform limitations.
+
+### Market Sizing
+
+The addressable market includes organisations across Africa that produce PDF-based content and want to publish it digitally. This spans publishing houses, corporate organisations, NGOs and development organisations, government institutions, educational organisations, and independent publishers. The market is served by a small number of international platforms that do not optimise for African payment realities or occasional publishing patterns.
 
 ---
 
 # Part 3 — Operating Model
 
-## 9. Key Capabilities
+## 10. Key Capabilities
 
-Business capabilities mapped to the Product Architecture (PA-001):
+Docsflip's business capabilities are the activities the organisation must perform to deliver its value proposition. Each capability maps to a domain defined in the Product Architecture (PA-001).
 
-- **Publications** — digital publishing, hosting, management, distribution.
-- **Organisations** — workspace management, team publishing, governance.
-- **Analytics** — publication performance, reader behaviour, publisher insights.
-- **Identity** — user acquisition and retention. _(Placeholder — content expansion deferred to Loop 2.)_
-- **Commercial** — revenue model and value capture. _(Placeholder — content expansion deferred to Loop 2.)_
-- **Reader Experience** — reader value delivery and audience growth. _(Placeholder — content expansion deferred to Loop 2.)_
+### Publications
 
-> **Note:** "Customer support" has been removed as a business capability. Platform administration and support are operational concerns deferred to Solution Architecture (ARC-001) per the Capability Framework (CAP-001 §5).
+The core capability — converting PDF documents into interactive digital publications, hosting them, managing their lifecycle, and enabling their distribution. Publications capabilities include document ingestion, validation, conversion, preview, publishing, hosting, metadata management, lifecycle state management, sharing, embedding, and archival. This is the capability that directly creates customer value.
 
----
+### Organisations
 
-## 10. Strategic Differentiators
+Enabling organisational customers to manage publishing as a team activity. Organisation capabilities include workspace creation, team management, membership, role-based permissions, invitation workflows, collaboration settings, and organisational branding. This capability transforms Docsflip from an individual tool into an organisational platform.
 
-- Output-based value model.
-- Africa-first product strategy.
-- Transparent commercial philosophy.
-- Designed for occasional and regular publishers.
-- Simplicity over unnecessary complexity.
+### Analytics
 
----
+Measuring publication performance and providing business intelligence. Analytics capabilities include publication metrics (views, readership, engagement), reader behaviour tracking, publisher insights, commercial reporting, and geographic distribution data. This capability enables customers to measure the impact of their publishing and enables Docsflip to understand market behaviour.
 
-## 11. Relationship to Other Documents
+### Identity
 
-- CON-001 defines what Docsflip is.
-- BIZ-001 defines how the business creates and captures value.
-- COM-001 defines how the commercial engine operates.
-- USR-001 defines who the platform serves.
-- JNY-001 defines the experience delivered.
+User acquisition, account management, authentication, and credential lifecycle. Identity capabilities include registration, login, profile management, account recovery, and personal preferences. This capability is the entry point for all customer relationships and enables trust through secure, privacy-respecting identity management.
+
+### Commercial
+
+The economic engine — credits, wallets, payments, entitlements, and publication output monetisation. Commercial capabilities include wallet management, credit purchase, credit consumption, cost preview, entitlement management, and transaction history. This capability translates publishing activity into business revenue.
+
+### Reader Experience
+
+Publication consumption — reading, navigation, accessibility, and reader interaction. Reader Experience capabilities include the flipbook viewer, page navigation, search within publication, mobile-responsive viewing, and accessibility features. This capability delivers value to publication readers and drives audience growth for publishers.
+
+> **Note:** Customer support and platform administration are operational concerns deferred to Solution Architecture (ARC-001). They are not business capabilities in the architectural sense but are essential operational functions.
 
 ---
 
-## 12. Foundational Business Decisions
+## 11. Key Resources
 
-1. Publishing outcomes are the primary source of value.
-2. Revenue should align with customer value creation.
-3. Commercial mechanics must remain transparent.
-4. Business strategy and commercial implementation are separate concerns.
+The assets required to deliver the business model.
+
+### Technology Platform
+
+The Docsflip software platform — including the web application, PDF conversion engine, publication viewer, hosting infrastructure, payment integration layer, and analytics pipeline — is the foundational technological resource.
+
+### People
+
+The team required to build, operate, and grow Docsflip. Key roles include product management, software engineering, user experience design, commercial operations, customer support, marketing, and business development. Engineering governance is provided through the Founder Engineering Framework (FEF).
+
+### Brand and Reputation
+
+Docsflip's positioning as "Africa's pay-as-you-publish platform" and its commitment to transparency, simplicity, and African market relevance are intangible assets that differentiate the business from international competitors.
+
+### Payment Infrastructure Relationships
+
+Partnerships with payment providers (mobile money platforms, card processors, invoicing services) are critical infrastructure resources. The platform's payment abstraction layer allows provider relationships to evolve without architectural disruption.
+
+### Customer Base and Publication Portfolio
+
+As customers publish, the accumulated portfolio of hosted publications, publisher relationships, and usage data becomes a strategic resource for retention, product improvement, and market intelligence.
 
 ---
 
-## 13. Refactoring State
+## 12. Key Partnerships
+
+External relationships that enable or enhance the business model.
+
+### Payment Providers
+
+Mobile money platforms (M-PESA and equivalents), card payment processors, bank payment services, and invoicing platforms. These partnerships enable the African payment support that is central to Docsflip's value proposition. Pesapal may be assessed as an initial partner due to its African payment integrations.
+
+### Technology Infrastructure Providers
+
+Cloud hosting providers, CDN services, PDF processing tooling, and analytics infrastructure vendors. These partnerships provide the technical foundation without requiring Docsflip to build commodity infrastructure.
+
+### Publishing and Content Partners
+
+Organisations that integrate Docsflip publishing into their content workflows — content management systems, document preparation tools, and publishing platforms. These partnerships extend Docsflip's reach into existing customer workflows.
+
+### Channel Partners
+
+Publishing associations, business networks, NGO coordination bodies, and government digital transformation programmes that refer customers, co-market, or integrate Docsflip into their service offerings.
+
+### Strategic Resellers and Agencies
+
+Communications agencies, design firms, and marketing service providers who publish on behalf of clients. While Docsflip is not an agency-first platform, agencies represent a scalable channel for customer acquisition.
+
+---
+
+## 13. Cost Structure
+
+The costs incurred to operate the business model.
+
+### Platform Development and Maintenance
+
+Software engineering, product management, design, and quality assurance. These are the primary ongoing costs. The Founder Engineering Framework (FEF) provides governance that should reduce waste and rework.
+
+### Cloud Infrastructure
+
+Hosting, storage, content delivery, PDF processing compute, and analytics infrastructure. Infrastructure costs scale with publication volume and reader traffic. The per-publication cost must remain below the revenue generated per publication.
+
+### Payment Processing
+
+Transaction fees from payment providers, currency conversion costs, and payment gateway charges. These are variable costs that scale with revenue. African payment methods may have different fee structures than international card networks.
+
+### Customer Acquisition and Marketing
+
+Digital marketing, content production, partnership development, and direct outreach. Customer acquisition cost must be recoverable within a reasonable number of publication transactions per customer.
+
+### Operations and Support
+
+Customer support, platform operations, compliance, legal, and administration. These are largely fixed costs that become proportionally smaller as the business scales.
+
+### Cost Structure Principles
+
+- Variable costs (infrastructure, payment processing) should scale proportionally with revenue.
+- Fixed costs (development, operations) should be managed for efficiency as the business grows.
+- The per-publication margin — revenue per publication minus variable costs — must be positive at the lowest credit bundle level.
+
+---
+
+## 14. Revenue Streams
+
+How the business generates revenue from each customer segment.
+
+### Credit Bundle Purchases (All Segments)
+
+Individual customers purchase Docsflip Credits in bundles. Bundle sizes range from introductory low-cost bundles (enabling the "from as little as $1" proposition) through regular bundles for frequent publishers to large bundles for volume publishers. Credits are consumed on publication, creating a direct link between customer value and business revenue.
+
+### Organisation Subscriptions (Publishing Houses, Corporate, NGO, Government)
+
+Organisations subscribe to managed workspaces with monthly or annual credit allocations, consolidated billing, and organisational features. Subscriptions provide recurring revenue while maintaining the transparent, credit-based consumption model.
+
+### Publication Output Add-Ons (All Segments)
+
+Additional revenue is generated from publication enhancements: extra pages beyond the base allowance, branding removal, custom logo placement, website embed generation, offline interactive packages, self-hosted publication packages, hosting renewal, and advanced analytics.
+
+### Enterprise Arrangements (Government, Large Publishers, Institutions)
+
+Custom pricing, volume commitments, invoicing, and negotiated service terms for large customers with formal procurement requirements. These arrangements provide high-value, long-term revenue with lower transaction frequency.
+
+### Revenue Principles
+
+- The "from as little as $1" proposition communicates accessibility without requiring every transaction to be $1.
+- Purchased credits do not expire — unused credits represent deferred revenue, not lost revenue.
+- Revenue recognition occurs at credit consumption (publication), not at credit purchase.
+- Detailed commercial rules, pricing, and credit mechanics are defined in COM-001.
+
+---
+
+## 15. Strategic Differentiators
+
+What distinguishes Docsflip from alternative solutions.
+
+### Output-Based Value Model
+
+Revenue is tied to publication outputs, not platform access. This aligns Docsflip's commercial interests with customer success and removes the subscription barrier for occasional publishers. International competitors typically require recurring subscriptions regardless of publishing activity.
+
+### Africa-First Design
+
+The platform is designed for African payment methods, organisational structures, and publishing patterns from inception. International competitors treat African markets as secondary or design for developed-market assumptions.
+
+### Transparent Commercial Philosophy
+
+Costs are visible before commitment. Every transaction is recorded in an immutable ledger. There are no hidden fees, unexpected limitations, or silent credit consumption. This builds trust in markets where pricing opacity is common.
+
+### Organisational Publishing Support
+
+Workspaces, teams, roles, permissions, approval workflows, and consolidated billing are core platform capabilities — not enterprise-tier upsells. Organisations of any size can manage publishing as a team activity.
+
+### Flexibility Across Publishing Frequencies
+
+The platform serves publishers who publish once a year and those who publish daily without forcing either into an inappropriate commercial structure. Credit bundles scale with usage; subscriptions are optional.
+
+### Simplicity Over Complexity
+
+The publishing flow is designed to be understood on first use. Feature accumulation is resisted — capabilities are added when they serve clear publishing needs, not to match competitor feature lists.
+
+---
+
+## 16. Foundational Business Decisions
+
+1. **Publishing outcomes are the primary source of value.** Every business decision should be tested against whether it strengthens the publishing experience.
+
+2. **Revenue should align with customer value creation.** Docsflip earns when customers publish — not when they maintain accounts, browse the platform, or occupy a subscription tier.
+
+3. **Commercial mechanics must remain transparent.** Pricing, credit consumption, and publication costs must be visible before commitment. Trust is a business asset.
+
+4. **Business strategy and commercial implementation are separate concerns.** BIZ-001 defines how the business creates and captures value. COM-001 defines the commercial engine that executes it.
+
+5. **Africa is the design centre, not an expansion target.** Business assumptions, market strategies, and partnership decisions should be validated against African market realities.
+
+6. **Organisational publishing is a core competency, not an upsell.** The platform's organisational capabilities should serve small NGOs and large government ministries with the same architectural foundation.
+
+---
+
+## 17. Refactoring State
 
 **Loop 1 — Business Structure Alignment: COMPLETE.**
+**Loop 2 — Business Content Expansion: COMPLETE.**
 
-This document has been structurally aligned with PA-001 v0.4. The three-group structure (Value Model / Market Model / Operating Model) has been introduced. Terminology has been aligned with PA-001 domain vocabulary. Placeholders for Identity, Commercial, and Reader Experience capabilities have been added. Customer Support has been removed as a business capability.
+This document has been structurally aligned with PA-001 v0.4 and fully expanded with business content across all three operating groups: Value Model, Market Model, and Operating Model. All sections defined in the approved expansion blueprint are complete.
 
 **Pending work:**
 
-- **Loop 2 — Business Content Expansion:** Detailed business model content including cost structure, key resources, key partnerships, revenue stream decomposition, and market geography. Requires Founder authorisation.
 - **Loop 3 — Traceability and Alignment:** CAP-001/002/004 references, PA-001 domain mapping table, CON-001 cross-references. Requires Founder authorisation.
