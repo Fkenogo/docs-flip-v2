@@ -2,26 +2,51 @@
 
 **Document ID:** DOCSFLIP-BIZ-001  
 **Title:** Business Model  
-**Version:** 0.3 (Loop 2 — Business Content Expansion)  
+**Version:** 0.4 (Loop 3 — Architectural Integration)  
 **Status:** Active Draft  
 **Maturity:** L2 — Expanded  
 **Repository Path:** `docs/01-product-foundation/`  
 **Authority:** Founder  
-**Parent Documents:** DOCSFLIP-MP-001, DOCSFLIP-PA-001
+**Parent Documents:** DOCSFLIP-MP-001, DOCSFLIP-PA-001, DOCSFLIP-CAP-001
 
 ---
 
 # 1. Purpose
 
-This document defines how Docsflip creates, delivers and captures value as a business.
+This document defines how Docsflip creates, delivers and captures value as a business. It translates the Product Foundation (CON-001) and the Capability Framework (CAP-001 through CAP-005) into a structured business model.
 
 It intentionally stops short of describing commercial mechanics such as credits, pricing, payment flows and publication charging. Those belong in **DOCSFLIP-COM-001 — Commercial Architecture**.
 
 ---
 
+# 2. Document Responsibility Statement
+
+BIZ-001 owns the business strategy of Docsflip. It defines the value model, market model, and operating model at the business level.
+
+**BIZ-001 owns:**
+
+- Business purpose and rationale (derived from CON-001).
+- Value creation, delivery, and capture logic.
+- Customer segment definition and market geography.
+- Customer relationship strategy and channel architecture.
+- Business capabilities, resources, partnerships, and cost structure.
+- Revenue stream definition.
+- Strategic differentiation.
+
+**BIZ-001 does not own:**
+
+- Product identity, philosophy, or principles → CON-001.
+- Architecture domains or capability definitions → PA-001 and CAP-001.
+- Commercial mechanics (credits, pricing, payments) → COM-001.
+- User personas or stakeholder analysis → USR-001.
+- User journeys → JNY-001.
+- Technical architecture or implementation → ARC-001.
+
+---
+
 # Part 1 — Value Model
 
-## 2. Business Purpose
+## 3. Business Purpose
 
 Docsflip exists to make professional digital publishing accessible, transparent and affordable for African organisations of every size.
 
@@ -29,9 +54,11 @@ The business purpose is derived directly from the Product Foundation (CON-001): 
 
 The business operates on a fundamental belief: publishing outcomes define value. The platform generates revenue when customers publish, not when they maintain accounts. This aligns the business's commercial interests with customer value — Docsflip succeeds when its customers successfully publish.
 
+**Constitutional basis:** CON-001 §4 (Vision), §5 (Mission), §6 (Product Purpose), PH-001 (Publishing Outcomes Define Value).
+
 ---
 
-## 3. Value Creation
+## 4. Value Creation
 
 Docsflip creates value by enabling organisations to transform static PDF documents into interactive, shareable digital publications.
 
@@ -41,25 +68,35 @@ Docsflip creates value by enabling organisations to transform static PDF documen
 
 The core value creation mechanism is the conversion of PDF documents into professional digital flipbook publications. A document that was previously a static file becomes an interactive, mobile-responsive, shareable publication. This transformation enables organisations to present their content in formats that engage readers and reflect professional quality.
 
+**Capability owner:** Publications (CAP-001 §2, PA-001 §4.3).
+
 ### Barrier Reduction
 
 Docsflip removes the barriers that prevent occasional publishers from accessing digital publishing. By eliminating mandatory subscriptions, the platform allows organisations to publish when they need to — whether once a year or every day. This creates value for segments that existing platforms exclude: NGOs publishing annual reports, government institutions distributing policy documents, independent publishers releasing occasional catalogues.
+
+**Constitutional basis:** CON-001 PH-003 (Access Should Not Require Unnecessary Commitment).
 
 ### Organisational Enablement
 
 The platform enables organisations to manage publishing as a team activity. Workspaces, role-based permissions, approval workflows, and consolidated billing allow organisations to integrate publishing into their existing operational structures rather than treating it as an individual activity.
 
+**Capability owner:** Organisations (CAP-001 §2, PA-001 §4.2).
+
 ### African Market Relevance
 
 By designing for African payment methods, procurement processes, and publishing patterns from the start, Docsflip creates value that international platforms cannot easily replicate. African organisations encounter a platform that understands their payment realities, their organisational structures, and their publishing needs.
+
+**Constitutional basis:** CON-001 PH-006 (Africa Is a Design Assumption), PP-009 (Market-Aware).
 
 ### Transparency as Value
 
 The platform's commitment to transparent pricing — showing costs before commitment, maintaining an immutable credit ledger, never silently consuming credits — creates trust value. Customers know what they will pay, what they will receive, and what remains.
 
+**Constitutional basis:** CON-001 PH-002 (Transparency Is a Product Feature), PP-003 (Transparency by Design).
+
 ---
 
-## 4. Value Delivery
+## 5. Value Delivery
 
 Value is delivered to customers through multiple channels and mechanisms designed for accessibility, reliability, and organisational fit.
 
@@ -67,29 +104,41 @@ Value is delivered to customers through multiple channels and mechanisms designe
 
 The primary delivery mechanism is the Docsflip web platform. Customers create accounts, upload PDFs, preview publications, approve costs, publish, and manage their publications through a self-service interface. The publishing flow is designed to be understood on first use — no training, documentation, or support intervention should be required for the core publishing transaction.
 
+**Capability owner:** Publications (Creation), Identity.
+
 ### Cloud-Hosted Publications
 
 Published documents are hosted on Docsflip infrastructure with defined hosting durations, renewal mechanisms, and clear lifecycle states. Customers receive shareable links, embed codes, and QR codes for distribution. Hosting is managed — customers do not need to maintain infrastructure.
+
+**Capability owner:** Publications (Management), Publications (Distribution).
 
 ### Organisation Workspaces
 
 For organisational customers, value is delivered through managed workspaces that support teams, roles, permissions, and collaborative publishing workflows. Organisation administrators can manage members, allocate publishing capacity, and monitor organisational publishing activity.
 
+**Capability owner:** Organisations (CAP-002, PA-001 §4.2).
+
 ### Offline and Self-Hosted Outputs
 
 Customers who require independence from Docsflip hosting can purchase self-hosted interactive publication packages. These deliver the complete publication — HTML, JavaScript, assets, viewer — for the customer to host independently.
+
+**Capability owner:** Publications (Distribution), Commercial (Publication Outputs).
 
 ### Publication Analytics
 
 Customers receive publication performance data — views, readership, engagement metrics — enabling them to measure the impact of their published content.
 
+**Capability owner:** Analytics (CAP-001 §2, PA-001 §5.2).
+
 ### Secure Sharing and Access
 
 Publications are distributed through permanent shareable links, website embeds, and QR codes with access control policies. Customers control who can view their publications and how they are distributed.
 
+**Capability owner:** Publications (Distribution), Reader Experience.
+
 ---
 
-## 5. Value Capture
+## 6. Value Capture
 
 Docsflip captures value through a pay-as-you-publish commercial model. Revenue is generated when customers publish and consume publishing services.
 
@@ -98,8 +147,12 @@ Docsflip captures value through a pay-as-you-publish commercial model. Revenue i
 **Pay-Per-Publication (Primary)**
 The primary revenue mechanism is per-publication charging. Customers purchase Docsflip Credits in bundles and consume them when they create publication outputs. Revenue is recognised at the point of credit consumption — when a customer publishes a document, adds a publication enhancement, or renews hosting.
 
+**Capability owner:** Commercial (CAP-001 §2, PA-001 §4.4).
+
 **Credit Bundle Purchases**
 Customers pre-purchase publishing capacity through credit bundles. Bundle sizes are designed to serve different publishing frequencies: small bundles for occasional publishers, larger bundles for regular publishers, and allocated credit pools for organisational subscriptions. Purchased credits do not expire merely because time has passed.
+
+**Constitutional basis:** CON-001 PH-003, PP-002 (Pay for Value Delivered).
 
 **Organisation Subscriptions**
 Larger organisations may subscribe to managed workspaces with monthly or annual credit allocations, consolidated billing, and organisational administration features. Subscriptions provide predictable revenue while maintaining the credit-based consumption model — organisations still see how credits are consumed by publication, team member, or department.
@@ -111,15 +164,32 @@ Large publishers, institutions, and public bodies may negotiate custom pricing, 
 
 - Revenue aligns with customer value — Docsflip earns when customers publish.
 - Commercial mechanics remain transparent — every cost is visible before commitment.
-- The detailed commercial engine — credits, publication outputs, pricing, bundles, and payment rules — is defined separately in COM-001.
+- The detailed commercial engine — credits, publication outputs, pricing, bundles, and payment rules — is defined separately in COM-001 (CAP-001 §2, COM-001).
+
+---
+
+## 7. Business Capability Traceability
+
+Every business capability traces to a PA-001 domain, which in turn traces to a CAP-001 Level 1 capability.
+
+| Business Capability | PA-001 Domain (§) | CAP-001 Capability     | CAP-002 Sub-capabilities                                                        |
+| ------------------- | ----------------- | ---------------------- | ------------------------------------------------------------------------------- |
+| Publications        | PA-001 §4.3       | Publications (L1)      | Creation, Management, Distribution                                              |
+| Organisations       | PA-001 §4.2       | Organisations (L1)     | Org Management, Workspace, Membership, Roles, Invitations, Collaboration        |
+| Commercial          | PA-001 §4.4       | Commercial (L1)        | Wallet, Credits, Payments, Entitlements, Publication Outputs                    |
+| Identity            | PA-001 §4.1       | Identity (L1)          | Registration, Authentication, Profile, Account Lifecycle, Preferences           |
+| Reader Experience   | PA-001 §5.1       | Reader Experience (L1) | Reading, Navigation, Search, Accessibility, Reader Preferences                  |
+| Analytics           | PA-001 §5.2       | Analytics (L1)         | Publication Metrics, Reader Behaviour, Publisher Insights, Commercial Reporting |
+
+**Primary business asset:** Publication (CAP-004). All other business assets (User, Organisation, Workspace, Wallet, Credit, Payment, Reader Session, Analytics Event) exist to create, govern, experience, commercialise, or measure publications (CAP-004).
 
 ---
 
 # Part 2 — Market Model
 
-## 6. Customer Segments
+## 8. Customer Segments
 
-Docsflip serves organisations and individuals who create PDF-based content and want to publish it digitally. Customer segments are defined by their publishing patterns, organisational context, and commercial preferences.
+Docsflip serves organisations and individuals who create PDF-based content and want to publish it digitally. Customer segments are defined by their publishing patterns, organisational context, and commercial preferences. Detailed user personas for each segment belong in USR-001.
 
 ### Primary Segments
 
@@ -146,9 +216,11 @@ Individual creators publishing magazines, digital books, portfolios, catalogues,
 **Agencies and Service Providers**
 Communications agencies, design firms, and marketing service providers who publish on behalf of clients. While Docsflip is not an agency-first platform, agencies represent a channel to market rather than a primary customer segment.
 
+**Cross-reference:** Detailed user personas, needs analysis, and stakeholder mapping → USR-001.
+
 ---
 
-## 7. Customer Relationships
+## 9. Customer Relationships
 
 Docsflip builds and maintains customer relationships through transparency, reliability, and respect for customer autonomy.
 
@@ -171,7 +243,7 @@ For regular publishers, Docsflip aims to become a trusted publishing partner. Re
 
 ---
 
-## 8. Channels
+## 10. Channels
 
 Customers discover, evaluate, and access Docsflip through multiple channels.
 
@@ -197,13 +269,15 @@ For enterprise and institutional customers, direct relationship development — 
 
 ---
 
-## 9. Market Geography
+## 11. Market Geography
 
 Docsflip is designed for Africa and launched from East Africa, with progressive continental expansion.
 
 ### Primary Market: Africa
 
 Docsflip's product, commercial model, payment architecture, and market assumptions are built for African organisations. This is not a "launch in developed markets, expand to Africa later" strategy. Africa is the design centre.
+
+**Constitutional basis:** CON-001 §1.4, §2, PH-006, PP-009.
 
 ### Initial Launch: East Africa
 
@@ -221,39 +295,51 @@ The addressable market includes organisations across Africa that produce PDF-bas
 
 # Part 3 — Operating Model
 
-## 10. Key Capabilities
+## 12. Key Capabilities
 
-Docsflip's business capabilities are the activities the organisation must perform to deliver its value proposition. Each capability maps to a domain defined in the Product Architecture (PA-001).
+Docsflip's business capabilities are the activities the organisation must perform to deliver its value proposition. Each capability maps to a domain defined in the Product Architecture (PA-001) and the Capability Framework (CAP-001).
 
 ### Publications
 
 The core capability — converting PDF documents into interactive digital publications, hosting them, managing their lifecycle, and enabling their distribution. Publications capabilities include document ingestion, validation, conversion, preview, publishing, hosting, metadata management, lifecycle state management, sharing, embedding, and archival. This is the capability that directly creates customer value.
 
+**PA-001:** §4.3 | **CAP-001:** Publications (L1) | **CAP-002:** Creation, Management, Distribution
+
 ### Organisations
 
 Enabling organisational customers to manage publishing as a team activity. Organisation capabilities include workspace creation, team management, membership, role-based permissions, invitation workflows, collaboration settings, and organisational branding. This capability transforms Docsflip from an individual tool into an organisational platform.
+
+**PA-001:** §4.2 | **CAP-001:** Organisations (L1) | **CAP-002:** Org Management, Workspace, Membership, Roles, Invitations, Collaboration
 
 ### Analytics
 
 Measuring publication performance and providing business intelligence. Analytics capabilities include publication metrics (views, readership, engagement), reader behaviour tracking, publisher insights, commercial reporting, and geographic distribution data. This capability enables customers to measure the impact of their publishing and enables Docsflip to understand market behaviour.
 
+**PA-001:** §5.2 | **CAP-001:** Analytics (L1) | **CAP-002:** Publication Metrics, Reader Behaviour, Publisher Insights, Commercial Reporting
+
 ### Identity
 
 User acquisition, account management, authentication, and credential lifecycle. Identity capabilities include registration, login, profile management, account recovery, and personal preferences. This capability is the entry point for all customer relationships and enables trust through secure, privacy-respecting identity management.
+
+**PA-001:** §4.1 | **CAP-001:** Identity (L1) | **CAP-002:** Registration, Authentication, Profile, Account Lifecycle, Preferences
 
 ### Commercial
 
 The economic engine — credits, wallets, payments, entitlements, and publication output monetisation. Commercial capabilities include wallet management, credit purchase, credit consumption, cost preview, entitlement management, and transaction history. This capability translates publishing activity into business revenue.
 
+**PA-001:** §4.4 | **CAP-001:** Commercial (L1) | **CAP-002:** Wallet, Credits, Payments, Entitlements, Publication Outputs
+
 ### Reader Experience
 
 Publication consumption — reading, navigation, accessibility, and reader interaction. Reader Experience capabilities include the flipbook viewer, page navigation, search within publication, mobile-responsive viewing, and accessibility features. This capability delivers value to publication readers and drives audience growth for publishers.
 
-> **Note:** Customer support and platform administration are operational concerns deferred to Solution Architecture (ARC-001). They are not business capabilities in the architectural sense but are essential operational functions.
+**PA-001:** §5.1 | **CAP-001:** Reader Experience (L1) | **CAP-002:** Reading, Navigation, Search, Accessibility, Reader Preferences
+
+> **Note:** Customer support and platform administration are operational concerns deferred to Solution Architecture (ARC-001). They are not business capabilities in the architectural sense (CAP-001 §5).
 
 ---
 
-## 11. Key Resources
+## 13. Key Resources
 
 The assets required to deliver the business model.
 
@@ -279,7 +365,7 @@ As customers publish, the accumulated portfolio of hosted publications, publishe
 
 ---
 
-## 12. Key Partnerships
+## 14. Key Partnerships
 
 External relationships that enable or enhance the business model.
 
@@ -305,7 +391,7 @@ Communications agencies, design firms, and marketing service providers who publi
 
 ---
 
-## 13. Cost Structure
+## 15. Cost Structure
 
 The costs incurred to operate the business model.
 
@@ -337,9 +423,9 @@ Customer support, platform operations, compliance, legal, and administration. Th
 
 ---
 
-## 14. Revenue Streams
+## 16. Revenue Streams
 
-How the business generates revenue from each customer segment.
+How the business generates revenue from each customer segment. The detailed commercial rules, pricing, credit mechanics, and payment strategy are defined in COM-001.
 
 ### Credit Bundle Purchases (All Segments)
 
@@ -366,7 +452,7 @@ Custom pricing, volume commitments, invoicing, and negotiated service terms for 
 
 ---
 
-## 15. Strategic Differentiators
+## 17. Strategic Differentiators
 
 What distinguishes Docsflip from alternative solutions.
 
@@ -374,29 +460,41 @@ What distinguishes Docsflip from alternative solutions.
 
 Revenue is tied to publication outputs, not platform access. This aligns Docsflip's commercial interests with customer success and removes the subscription barrier for occasional publishers. International competitors typically require recurring subscriptions regardless of publishing activity.
 
+**Constitutional basis:** CON-001 PH-001, PP-001.
+
 ### Africa-First Design
 
 The platform is designed for African payment methods, organisational structures, and publishing patterns from inception. International competitors treat African markets as secondary or design for developed-market assumptions.
+
+**Constitutional basis:** CON-001 PH-006, PP-009.
 
 ### Transparent Commercial Philosophy
 
 Costs are visible before commitment. Every transaction is recorded in an immutable ledger. There are no hidden fees, unexpected limitations, or silent credit consumption. This builds trust in markets where pricing opacity is common.
 
+**Constitutional basis:** CON-001 PH-002, PP-003.
+
 ### Organisational Publishing Support
 
 Workspaces, teams, roles, permissions, approval workflows, and consolidated billing are core platform capabilities — not enterprise-tier upsells. Organisations of any size can manage publishing as a team activity.
+
+**Constitutional basis:** CON-001 PH-007, PP-007.
 
 ### Flexibility Across Publishing Frequencies
 
 The platform serves publishers who publish once a year and those who publish daily without forcing either into an inappropriate commercial structure. Credit bundles scale with usage; subscriptions are optional.
 
+**Constitutional basis:** CON-001 PP-005.
+
 ### Simplicity Over Complexity
 
 The publishing flow is designed to be understood on first use. Feature accumulation is resisted — capabilities are added when they serve clear publishing needs, not to match competitor feature lists.
 
+**Constitutional basis:** CON-001 PH-005, PP-001.
+
 ---
 
-## 16. Foundational Business Decisions
+## 18. Foundational Business Decisions
 
 1. **Publishing outcomes are the primary source of value.** Every business decision should be tested against whether it strengthens the publishing experience.
 
@@ -412,13 +510,75 @@ The publishing flow is designed to be understood on first use. Feature accumulat
 
 ---
 
-## 17. Refactoring State
+## 19. Architectural Integration Summary
+
+BIZ-001 is the business strategy layer of the Docsflip documentation repository. It translates the Product Foundation (CON-001) and the Capability Framework (CAP-001 through CAP-005) into a structured business model. It depends on PA-001 for domain definitions and delegates commercial mechanics to COM-001.
+
+### Dependency Map
+
+```text
+CON-001 (Product Foundation)
+    │
+    ▼
+CAP-001 (Canonical Capability Model)
+    │
+    ▼
+PA-001 (Product Architecture)
+    │
+    ▼
+BIZ-001 (Business Model) ──► COM-001 (Commercial Rules)
+    │
+    ▼
+USR-001 (Users & Stakeholders)
+    │
+    ▼
+JNY-001 (User Journeys)
+    │
+    ▼
+FEA-001 (Product Features)
+    │
+    ▼
+REQ-001 (Product Requirements)
+```
+
+### Ownership Boundaries
+
+| What BIZ-001 Owns                 | What BIZ-001 References                     |
+| --------------------------------- | ------------------------------------------- |
+| Business purpose and strategy     | CON-001 for product identity and philosophy |
+| Value creation, delivery, capture | PA-001 for domain definitions               |
+| Customer segment definition       | CAP-001/002 for capability traceability     |
+| Market geography and channels     | COM-001 for commercial rules (does not own) |
+| Business capabilities mapping     | USR-001 for user personas (does not own)    |
+| Revenue stream definition         | ARC-001 for implementation (does not own)   |
+| Strategic differentiation         |                                             |
+
+### Upstream Dependencies
+
+| Document | Dependency Type                                                  |
+| -------- | ---------------------------------------------------------------- |
+| CON-001  | Constitutional — business purpose derived from product identity  |
+| CAP-001  | Constitutional — business capabilities trace to capability model |
+| CAP-002  | Structural — capability decomposition for business mapping       |
+| CAP-004  | Structural — publication as primary business asset               |
+| PA-001   | Structural — domain vocabulary and bounded contexts              |
+
+### Downstream Consumers
+
+| Document | How BIZ-001 Is Used                                               |
+| -------- | ----------------------------------------------------------------- |
+| COM-001  | Revenue model and value capture logic inform commercial rules     |
+| USR-001  | Customer segments inform user persona development                 |
+| JNY-001  | Business model informs journey priorities and commercial journeys |
+| FEA-001  | Business capabilities inform feature prioritisation               |
+| REQ-001  | Business constraints inform requirements                          |
+
+---
+
+## 20. Refactoring State
 
 **Loop 1 — Business Structure Alignment: COMPLETE.**
 **Loop 2 — Business Content Expansion: COMPLETE.**
+**Loop 3 — Architectural Integration: COMPLETE.**
 
-This document has been structurally aligned with PA-001 v0.4 and fully expanded with business content across all three operating groups: Value Model, Market Model, and Operating Model. All sections defined in the approved expansion blueprint are complete.
-
-**Pending work:**
-
-- **Loop 3 — Traceability and Alignment:** CAP-001/002/004 references, PA-001 domain mapping table, CON-001 cross-references. Requires Founder authorisation.
+BIZ-001 v0.4 is fully integrated into the Docsflip documentation repository with complete constitutional traceability (CON-001), capability traceability (CAP-001/002/004), domain traceability (PA-001), and downstream cross-references. All three implementation loops are complete.
