@@ -524,22 +524,23 @@ CAP-001 (Canonical Capability Model)
     │
     ▼
 PA-001 (Product Architecture)
-    │
-    ▼
-BIZ-001 (Business Model) ──► COM-001 (Commercial Rules)
-    │
-    ▼
-USR-001 (Users & Stakeholders)
-    │
-    ▼
-JNY-001 (User Journeys)
-    │
-    ▼
-FEA-001 (Product Features)
-    │
-    ▼
-REQ-001 (Product Requirements)
+ ├──────────────┬──────────────┐
+ ▼              ▼              ▼
+BIZ-001     COM-001      USR-001
+(Business     (Commercial   (Users &
+ Model)       Architecture)  Stakeholders)
+    │              │              │
+    │              │              ▼
+    │              │           JNY-001
+    │              │              │
+    │              │              ▼
+    │              │           FEA-001
+    │              │              │
+    │              │              ▼
+    │              │           REQ-001
 ```
+
+**Content dependency:** COM-001 elaborates the commercial mechanics of the approved business model defined in BIZ-001. This is a content dependency, not an architectural hierarchy. BIZ-001, COM-001, and USR-001 remain architectural peers under PA-001.
 
 ### Ownership Boundaries
 
@@ -565,13 +566,13 @@ REQ-001 (Product Requirements)
 
 ### Downstream Consumers
 
-| Document | How BIZ-001 Is Used                                               |
-| -------- | ----------------------------------------------------------------- |
-| COM-001  | Revenue model and value capture logic inform commercial rules     |
-| USR-001  | Customer segments inform user persona development                 |
-| JNY-001  | Business model informs journey priorities and commercial journeys |
-| FEA-001  | Business capabilities inform feature prioritisation               |
-| REQ-001  | Business constraints inform requirements                          |
+| Document | How BIZ-001 Is Used                                                                |
+| -------- | ---------------------------------------------------------------------------------- |
+| COM-001  | Content dependency — revenue model and value capture logic inform commercial rules |
+| USR-001  | Customer segments inform user persona development                                  |
+| JNY-001  | Business model informs journey priorities and commercial journeys                  |
+| FEA-001  | Business capabilities inform feature prioritisation                                |
+| REQ-001  | Business constraints inform requirements                                           |
 
 ---
 

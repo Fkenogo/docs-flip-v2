@@ -6,7 +6,7 @@
 **Status:** Active Draft  
 **Repository Path:** `docs/02-commercial/`  
 **Authority:** Founder  
-**Parent Documents:** DOCSFLIP-MP-001, DOCSFLIP-PA-001, DOCSFLIP-BIZ-001
+**Parent Documents:** DOCSFLIP-PA-001 (architectural), DOCSFLIP-BIZ-001 (content)
 
 ---
 

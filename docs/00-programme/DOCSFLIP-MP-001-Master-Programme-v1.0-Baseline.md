@@ -2,11 +2,11 @@
 
 **Document ID:** DOCSFLIP-MP-001  
 **Title:** Master Programme  
-**Version:** 1.6 (WP-02R Formal Closure)  
+**Version:** 1.8 (Programme Checkpoint Dependency Reconciliation)
 **Status:** Active  
 **Repository Path:** `docs/00-programme/`  
 **Authority:** Founder  
-**Last Updated:** 2026-07-30
+**Last Updated:** 2026-08-06
 
 ---
 
@@ -166,36 +166,42 @@ Key observations:
 - CON-001 is the root product knowledge document (below MP-001).
 - CAP-001 defines the canonical capability model — 6 Level 1 business capabilities. It is authoritative for all downstream architecture.
 - PA-001 elaborates capabilities into architecture domains without inventing new ones.
-- BIZ-001, COM-001 and USR-001 are peer branches under PA-001.
+- BIZ-001, COM-001 and USR-001 are architectural peers under PA-001.
 - JNY-001 derives from USR-001.
 - The product chain (USR-001 → JNY-001 → FEA-001 → REQ-001) preserves direct traceability.
 - DAT-001 and ARC-001 translate product and commercial intent into technical design.
 - IMP-001 is the terminal document, depending on all preceding work.
 
+**Distinction between dependency types:**
+
+- **Architectural hierarchy** — the directed influence model above. BIZ-001, COM-001 and USR-001 are peers under PA-001. No peer is architecturally upstream or downstream of another.
+- **Execution sequence** — the order in which documents are developed (§7.1). This governs work-package planning, not architectural influence.
+- **Content dependency** — a document may elaborate content defined in another document without that document being an architectural parent. COM-001 has a content dependency on BIZ-001 (commercial mechanics elaborate the approved business model) but remains an architectural peer of BIZ-001 under PA-001.
+
 ---
 
 # 8. Repository Document Register
 
-| ID      | Title                                      | Area           | Maturity      | Status           | Version | Parent Documents         | Repository Path                                    |
-| ------- | ------------------------------------------ | -------------- | ------------- | ---------------- | ------- | ------------------------ | -------------------------------------------------- |
-| MP-001  | Master Programme                           | Programme      | L2 (Expanded) | Active           | 1.6     | —                        | `docs/00-programme/`                               |
-| CON-001 | Product Foundation                         | Foundation     | L2 (Expanded) | Founder Approved | 0.2     | MP-001                   | `docs/01-product-foundation/`                      |
-| CAP-000 | Capability Framework                       | Foundation     | L1 (Skeleton) | Active           | 0.1     | MP-001, CON-001          | `docs/01-product-foundation/capability-framework/` |
-| CAP-001 | Canonical Capability Model                 | Foundation     | L1 (Skeleton) | Active           | 0.1     | CAP-000                  | `docs/01-product-foundation/capability-framework/` |
-| CAP-002 | Capability Maps                            | Foundation     | L1 (Skeleton) | Active           | 0.1     | CAP-001                  | `docs/01-product-foundation/capability-framework/` |
-| CAP-003 | Capability Interactions & Bounded Contexts | Foundation     | L1 (Skeleton) | Active           | 0.1     | CAP-001                  | `docs/01-product-foundation/capability-framework/` |
-| CAP-004 | Business Asset Model                       | Foundation     | L1 (Skeleton) | Active           | 0.1     | CAP-001                  | `docs/01-product-foundation/capability-framework/` |
-| CAP-005 | Capability Governance Standard             | Foundation     | L1 (Skeleton) | Active           | 0.1     | CAP-000                  | `docs/01-product-foundation/capability-framework/` |
-| PA-001  | Product Architecture                       | Foundation     | L2 (Expanded) | Active Draft     | 0.4     | MP-001, CON-001, CAP-001 | `docs/01-product-foundation/`                      |
-| BIZ-001 | Business Model                             | Foundation     | L1 (Skeleton) | Active Draft     | 0.1     | MP-001, PA-001           | `docs/01-product-foundation/`                      |
-| COM-001 | Commercial Architecture                    | Commercial     | L1 (Skeleton) | Active Draft     | 0.1     | MP-001, PA-001, BIZ-001  | `docs/02-commercial/`                              |
-| USR-001 | Users & Stakeholders                       | Product        | L1 (Skeleton) | Active Draft     | 0.1     | MP-001, PA-001           | `docs/03-product/`                                 |
-| JNY-001 | User Journeys                              | Product        | L1 (Skeleton) | Active Draft     | 0.1     | USR-001                  | `docs/03-product/`                                 |
-| FEA-001 | Product Features                           | Product        | L1 (Skeleton) | Active Draft     | 0.1     | JNY-001                  | `docs/03-product/`                                 |
-| REQ-001 | Product Requirements                       | Product        | L1 (Skeleton) | Active Draft     | 0.1     | FEA-001                  | `docs/03-product/`                                 |
-| DAT-001 | Data Architecture                          | Technical      | L0 (Planned)  | Planned          | —       | REQ-001                  | `docs/04-technical/`                               |
-| ARC-001 | Solution Architecture                      | Technical      | L0 (Planned)  | Planned          | —       | DAT-001                  | `docs/04-technical/`                               |
-| IMP-001 | Implementation Programme                   | Implementation | L0 (Planned)  | Planned          | —       | ARC-001                  | `docs/05-implementation/`                          |
+| ID      | Title                                      | Area           | Maturity      | Status           | Version | Parent Documents                          | Repository Path                                    |
+| ------- | ------------------------------------------ | -------------- | ------------- | ---------------- | ------- | ----------------------------------------- | -------------------------------------------------- |
+| MP-001  | Master Programme                           | Programme      | L2 (Expanded) | Active           | 1.8     | —                                         | `docs/00-programme/`                               |
+| CON-001 | Product Foundation                         | Foundation     | L2 (Expanded) | Founder Approved | 0.2     | MP-001                                    | `docs/01-product-foundation/`                      |
+| CAP-000 | Capability Framework                       | Foundation     | L1 (Skeleton) | Active           | 0.1     | MP-001, CON-001                           | `docs/01-product-foundation/capability-framework/` |
+| CAP-001 | Canonical Capability Model                 | Foundation     | L1 (Skeleton) | Active           | 0.1     | CAP-000                                   | `docs/01-product-foundation/capability-framework/` |
+| CAP-002 | Capability Maps                            | Foundation     | L1 (Skeleton) | Active           | 0.1     | CAP-001                                   | `docs/01-product-foundation/capability-framework/` |
+| CAP-003 | Capability Interactions & Bounded Contexts | Foundation     | L1 (Skeleton) | Active           | 0.1     | CAP-001                                   | `docs/01-product-foundation/capability-framework/` |
+| CAP-004 | Business Asset Model                       | Foundation     | L1 (Skeleton) | Active           | 0.1     | CAP-001                                   | `docs/01-product-foundation/capability-framework/` |
+| CAP-005 | Capability Governance Standard             | Foundation     | L1 (Skeleton) | Active           | 0.1     | CAP-000                                   | `docs/01-product-foundation/capability-framework/` |
+| PA-001  | Product Architecture                       | Foundation     | L2 (Expanded) | Active Draft     | 0.4     | MP-001, CON-001, CAP-001                  | `docs/01-product-foundation/`                      |
+| BIZ-001 | Business Model                             | Foundation     | L2 (Expanded) | Active Draft     | 0.4     | MP-001, PA-001, CAP-001                   | `docs/01-product-foundation/`                      |
+| COM-001 | Commercial Architecture                    | Commercial     | L1 (Skeleton) | Active Draft     | 0.1     | PA-001 (architectural); BIZ-001 (content) | `docs/02-commercial/`                              |
+| USR-001 | Users & Stakeholders                       | Product        | L1 (Skeleton) | Active Draft     | 0.1     | MP-001, PA-001                            | `docs/03-product/`                                 |
+| JNY-001 | User Journeys                              | Product        | L1 (Skeleton) | Active Draft     | 0.1     | USR-001                                   | `docs/03-product/`                                 |
+| FEA-001 | Product Features                           | Product        | L1 (Skeleton) | Active Draft     | 0.1     | JNY-001                                   | `docs/03-product/`                                 |
+| REQ-001 | Product Requirements                       | Product        | L1 (Skeleton) | Active Draft     | 0.1     | FEA-001                                   | `docs/03-product/`                                 |
+| DAT-001 | Data Architecture                          | Technical      | L0 (Planned)  | Planned          | —       | REQ-001                                   | `docs/04-technical/`                               |
+| ARC-001 | Solution Architecture                      | Technical      | L0 (Planned)  | Planned          | —       | DAT-001                                   | `docs/04-technical/`                               |
+| IMP-001 | Implementation Programme                   | Implementation | L0 (Planned)  | Planned          | —       | ARC-001                                   | `docs/05-implementation/`                          |
 
 ## 8.1 Legacy Document Register
 
@@ -222,22 +228,24 @@ Documents proposed but not yet approved for repository entry.
 
 All structural decisions affecting the repository, ordered by decision date.
 
-| Ref          | Date       | Decision                                                                                                                                                                                                                                          | Status   |
-| ------------ | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| FD-P1-001    | 2026-07-29 | Adopt Hybrid Dependency Model (execution sequence + architectural dependency)                                                                                                                                                                     | Accepted |
-| FD-P1-002    | 2026-07-29 | DOCSFLIP-CONCEPT-001 designated Legacy Product Concept (Source Reference), moved to `docs/legacy/`                                                                                                                                                | Accepted |
-| FD-P1-003    | 2026-07-29 | PRC-001, PAY-001, PUB-001 entered into Candidate Register; not added to Repository Document Register                                                                                                                                              | Accepted |
-| FD-P1-004    | 2026-07-29 | Initialise operational registers (Candidate, Decision, Deferred, Open Questions, Risk & Assumption) with current programme knowledge                                                                                                              | Accepted |
-| FD-WP01-001  | 2026-07-29 | WP-01 Founder Disposition: Accept CON-001 v0.2 with Minor Conditions (3 conditions). Conditions applied: Product Non-goals added, Constitutional Stability statement added, EXP-001 registered as candidate. WP-01 closed. WP-02 authorised next. | Accepted |
-| FD-PF-001    | 2026-07-29 | Capability Framework (CAP-000 through CAP-005) approved in principle. Phase A analysis complete. Phase B integration authorised.                                                                                                                  | Accepted |
-| FD-PF-002    | 2026-07-29 | Capability Framework integrated into repository. CAP documents relocated to `capability-framework/`. MP-001 dependency chain, document register and architectural model updated. PA-001, CON-001, COM-001, USR-001 cross-references added.        | Accepted |
-| FD-VG-001    | 2026-07-29 | PF-007 Capability Framework Validation Gate APPROVED. CAP-000 through CAP-005 are the authoritative capability baseline for PA-001 and all downstream architecture documents.                                                                     | Accepted |
-| FD-WP02-001  | 2026-07-29 | WP-02 — Expand PA-001 CLOSED — SUPERSEDED by WP-02R. WP-02 scope assumed existing PA-001 domain structure was valid. Superseded by Capability Framework integration and PA-001 structural refactoring plan. Existing WP-02 artefacts preserved.   | Accepted |
-| FD-WP02R-001 | 2026-07-29 | WP-02R — Capability-Aligned Product Architecture Refactoring CREATED. Three controlled loops: Loop 1 (Structural Refactoring — Authorised), Loop 2 (Domain Content — Planned), Loop 3 (Relationships and Traceability — Planned).                 | Accepted |
-| FD-WP02R-002 | 2026-07-29 | WP-02R Loop 1 (Structural Refactoring) AUTHORISED. Execute the approved migrations from PA-RP-002 and PA-RP-004 Phase 1. Do not proceed to Loop 2 or Loop 3 without further Founder approval.                                                     | Accepted |
-| FD-WP02R-003 | 2026-07-29 | WP-02R Loop 2 (Domain Content Expansion) APPROVED and AUTHORISED. PA-001 promoted to L2 — Expanded.                                                                                                                                               | Accepted |
-| FD-WP02R-004 | 2026-07-29 | WP-02R Loop 3 (Relationships and Traceability) APPROVED and AUTHORISED.                                                                                                                                                                           | Accepted |
-| FD-WP02R-005 | 2026-07-30 | WP-02R FORMALLY CLOSED. All three loops complete. PA-001 v0.4, L2 Expanded, accepted as authoritative Product Architecture baseline. WP-03 authorised next.                                                                                       | Accepted |
+| Ref          | Date       | Decision                                                                                                                                                                                                                                                                                                                                                                                                              | Status   |
+| ------------ | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| FD-P1-001    | 2026-07-29 | Adopt Hybrid Dependency Model (execution sequence + architectural dependency)                                                                                                                                                                                                                                                                                                                                         | Accepted |
+| FD-P1-002    | 2026-07-29 | DOCSFLIP-CONCEPT-001 designated Legacy Product Concept (Source Reference), moved to `docs/legacy/`                                                                                                                                                                                                                                                                                                                    | Accepted |
+| FD-P1-003    | 2026-07-29 | PRC-001, PAY-001, PUB-001 entered into Candidate Register; not added to Repository Document Register                                                                                                                                                                                                                                                                                                                  | Accepted |
+| FD-P1-004    | 2026-07-29 | Initialise operational registers (Candidate, Decision, Deferred, Open Questions, Risk & Assumption) with current programme knowledge                                                                                                                                                                                                                                                                                  | Accepted |
+| FD-WP01-001  | 2026-07-29 | WP-01 Founder Disposition: Accept CON-001 v0.2 with Minor Conditions (3 conditions). Conditions applied: Product Non-goals added, Constitutional Stability statement added, EXP-001 registered as candidate. WP-01 closed. WP-02 authorised next.                                                                                                                                                                     | Accepted |
+| FD-PF-001    | 2026-07-29 | Capability Framework (CAP-000 through CAP-005) approved in principle. Phase A analysis complete. Phase B integration authorised.                                                                                                                                                                                                                                                                                      | Accepted |
+| FD-PF-002    | 2026-07-29 | Capability Framework integrated into repository. CAP documents relocated to `capability-framework/`. MP-001 dependency chain, document register and architectural model updated. PA-001, CON-001, COM-001, USR-001 cross-references added.                                                                                                                                                                            | Accepted |
+| FD-VG-001    | 2026-07-29 | PF-007 Capability Framework Validation Gate APPROVED. CAP-000 through CAP-005 are the authoritative capability baseline for PA-001 and all downstream architecture documents.                                                                                                                                                                                                                                         | Accepted |
+| FD-WP02-001  | 2026-07-29 | WP-02 — Expand PA-001 CLOSED — SUPERSEDED by WP-02R. WP-02 scope assumed existing PA-001 domain structure was valid. Superseded by Capability Framework integration and PA-001 structural refactoring plan. Existing WP-02 artefacts preserved.                                                                                                                                                                       | Accepted |
+| FD-WP02R-001 | 2026-07-29 | WP-02R — Capability-Aligned Product Architecture Refactoring CREATED. Three controlled loops: Loop 1 (Structural Refactoring — Authorised), Loop 2 (Domain Content — Planned), Loop 3 (Relationships and Traceability — Planned).                                                                                                                                                                                     | Accepted |
+| FD-WP02R-002 | 2026-07-29 | WP-02R Loop 1 (Structural Refactoring) AUTHORISED. Execute the approved migrations from PA-RP-002 and PA-RP-004 Phase 1. Do not proceed to Loop 2 or Loop 3 without further Founder approval.                                                                                                                                                                                                                         | Accepted |
+| FD-WP02R-003 | 2026-07-29 | WP-02R Loop 2 (Domain Content Expansion) APPROVED and AUTHORISED. PA-001 promoted to L2 — Expanded.                                                                                                                                                                                                                                                                                                                   | Accepted |
+| FD-WP02R-004 | 2026-07-29 | WP-02R Loop 3 (Relationships and Traceability) APPROVED and AUTHORISED.                                                                                                                                                                                                                                                                                                                                               | Accepted |
+| FD-WP02R-005 | 2026-07-30 | WP-02R FORMALLY CLOSED. All three loops complete. PA-001 v0.4, L2 Expanded, accepted as authoritative Product Architecture baseline. WP-03 authorised next.                                                                                                                                                                                                                                                           | Accepted |
+| FD-WP03-001  | 2026-07-30 | WP-03 FORMALLY CLOSED. All three loops (Structure, Content, Integration) complete. BIZ-001 v0.4, L2 Expanded, accepted as authoritative Business Model baseline. WP-04 authorised next.                                                                                                                                                                                                                               | Accepted |
+| FD-CHKPT-001 | 2026-08-06 | Programme Checkpoint 001 APPROVED. CON-001, PA-001 and BIZ-001 accepted as stable baseline. Dependency reconciliation authorised: BIZ-001 §19 corrected to peer-branch model; COM-001 classified as content-dependent on BIZ-001 (architectural parent PA-001); MP-001 §7.2 distinction added between architectural hierarchy, execution sequence and content dependency. WP-04 Planning authorised after validation. | Accepted |
 
 ---
 
@@ -245,9 +253,10 @@ All structural decisions affecting the repository, ordered by decision date.
 
 Ideas intentionally postponed so they are not lost.
 
-| Ref | Item                                | Reason for Deferral | Deferred Date |
-| --- | ----------------------------------- | ------------------- | ------------- |
-| —   | (None recorded at Baseline Closure) | —                   | —             |
+| Ref    | Item                                                                                                | Reason for Deferral                                                                                                  | Deferred Date |
+| ------ | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------- |
+| DF-001 | CAP-000, CAP-001, CAP-005 downstream-list maintenance (add BIZ-001 to downstream document lists)    | Low-priority traceability completeness. Add during a future Capability Framework maintenance pass, not before WP-04. | 2026-08-06    |
+| DF-002 | FEA-001 domain realignment to PA-001's 6 domains (remove "Administration", add "Reader Experience") | To be addressed during WP-07 Planning. Does not block WP-04, WP-05 or WP-06.                                         | 2026-08-06    |
 
 ---
 
@@ -292,20 +301,12 @@ Architectural assumptions, dependencies and known risks affecting repository evo
 | WP-01  | Expand CON-001                                      | Closed              | Accept with Minor    | Satisfied  | 2026-07-29   | CON-001 v0.2 | L2 — Expanded           |
 | WP-02  | Expand PA-001                                       | Closed — Superseded | Superseded by WP-02R | —          | 2026-07-29   | —            | Superseded              |
 | WP-02R | Capability-Aligned Product Architecture Refactoring | Closed              | Founder Authorised   | Satisfied  | 2026-07-30   | PA-001 v0.4  | L2 — Expanded (3 loops) |
-| WP-03  | Expand BIZ-001                                      | Planned             | —                    | —          | —            | —            | —                       |
+| WP-03  | Expand BIZ-001                                      | Closed              | Founder Authorised   | Satisfied  | 2026-07-30   | BIZ-001 v0.4 | L2 — Expanded (3 loops) |
 | WP-04  | Expand COM-001                                      | Planned             | —                    | —          | —            | —            | —                       |
 | WP-05  | Expand USR-001                                      | Planned             | —                    | —          | —            | —            | —                       |
 | WP-06  | Expand JNY-001                                      | Planned             | —                    | —          | —            | —            | —                       |
 | WP-07  | Expand FEA-001                                      | Planned             | —                    | —          | —            | —            | —                       |
 | WP-08  | Expand REQ-001                                      | Planned             | —                    | —          | —            | —            | —                       |
-
-### WP-02R Loop Register
-
-| Loop | Name                           | Status   |
-| ---- | ------------------------------ | -------- |
-| 1    | Structural Refactoring         | Complete |
-| 2    | Domain Content                 | Complete |
-| 3    | Relationships and Traceability | Complete |
 
 Each work package follows:
 
@@ -328,7 +329,7 @@ Repository Architecture & Skeleton. Complete.
 
 ## Phase 2 — Foundation Expansion
 
-Expand core foundation and commercial documents (WP-01 through WP-08). Capability Framework integrated and authoritative. PA-001 complete (WP-02R closed). WP-03 next.
+Expand core foundation and commercial documents (WP-01 through WP-08). CON-001, PA-001, BIZ-001 complete. COM-001 next.
 
 ## Phase 3 — Technical Definition
 
@@ -346,13 +347,14 @@ Track:
 
 - Planned documents: 18 permanent + 1 legacy
 - Active work packages: 0
-- Completed work packages: 3 (WP-01, WP-02, WP-02R)
-- Foundation Expansion progress: PA-001 complete; WP-03 next
-- Current programme position: WP-02R Closed — WP-03 Next
+- Completed work packages: 4 (WP-01, WP-02, WP-02R, WP-03)
+- Foundation Expansion progress: CON-001, PA-001, BIZ-001 complete; COM-001 next
+- Current programme position: WP-03 Closed — WP-04 Next
 - CON-001 maturity: L2 — Expanded (Founder Approved)
 - PA-001 maturity: L2 — Expanded (v0.4, authoritative baseline)
+- BIZ-001 maturity: L2 — Expanded (v0.4, authoritative baseline)
 - Capability Framework: Authoritative baseline
-- Repository completion: Phase 2 in progress
+- Repository completion: Phase 2 in progress (3/8 foundation documents complete)
 - Candidate proposals: 4 (PRC-001, PAY-001, PUB-001, EXP-001)
 
 ---
@@ -368,7 +370,7 @@ Monitor:
 - Terminology consistency
 - Outdated content
 
-**Current Health Assessment (WP-02R Closure):**
+**Current Health Assessment (WP-03 Closure):**
 
 | Metric                  | Status                                               |
 | ----------------------- | ---------------------------------------------------- |
@@ -377,7 +379,7 @@ Monitor:
 | Duplicate concepts      | Resolved — COM-001 collision eliminated              |
 | Cross-reference quality | Aligned with Hybrid Dependency Model + CAP Framework |
 | Terminology consistency | Consistent across all documents                      |
-| Outdated content        | None. PA-001 v0.4 is complete and authoritative.     |
+| Outdated content        | None. CON-001, PA-001, BIZ-001 complete.             |
 
 ---
 
@@ -421,4 +423,4 @@ Phase 1 (Programme Design) is complete when:
 
 **Phase 1 Status: COMPLETE — Baseline Closure achieved 2026-07-29.**
 
-Phase 2 is active. WP-01 and WP-02R are closed. PA-001 is complete and authoritative. WP-03 (Expand BIZ-001) is the next authorised work package.
+Phase 2 is active. WP-01, WP-02R, and WP-03 are closed. CON-001, PA-001, and BIZ-001 are complete and authoritative. WP-04 (Expand COM-001) is the next authorised work package.
